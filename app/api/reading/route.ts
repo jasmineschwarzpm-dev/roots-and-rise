@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { buildPrompt } from "@/lib/prompt";
 import { fallbackReading } from "@/lib/fallback";
+import { findViolations, scrubAll } from "@/lib/voice";
 import { WESTERN_SIGNS, ANIMALS, ELEMENTS, type Tone } from "@/lib/content";
 import { READING_PARTS, type Reading, type ReadingPart } from "@/lib/reading";
 
@@ -26,6 +27,8 @@ const READING_SCHEMA = {
   required: ["thread", "reading", "quote", "line"],
   additionalProperties: false,
 } as const;
+
+type Draft = { thread: string; reading: string; quote: string; line: string };
 
 /**
  * Best-effort request limiting to protect against runaway API spend. This lives
@@ -60,16 +63,6 @@ function clientIp(req: NextRequest): string {
   const forwarded = req.headers.get("x-forwarded-for");
   if (forwarded) return forwarded.split(",")[0].trim();
   return req.headers.get("x-real-ip") ?? "unknown";
-}
-
-// Standing rule: no em dashes or en dashes in user-facing text. The prompt
-// forbids them, and this scrubs any that slip through so the rule always holds.
-function scrub(text: string): string {
-  return text
-    .replace(/\s*[—–]\s*/g, ", ")
-    .replace(/,\s*,/g, ", ")
-    .replace(/\s{2,}/g, " ")
-    .trim();
 }
 
 type RequestBody = {
@@ -122,6 +115,42 @@ function offline(v: Validated, limited = false): NextResponse {
   return NextResponse.json({ ...reading, limited });
 }
 
+/** One model call returning the four parts, or null when the reply is unusable. */
+async function generateOnce(client: Anthropic, system: string, user: string): Promise<Draft | null> {
+  const response = await client.messages.create({
+    model: MODEL,
+    max_tokens: MAX_TOKENS,
+    thinking: { type: "disabled" },
+    system,
+    messages: [{ role: "user", content: user }],
+    output_config: { format: { type: "json_schema", schema: READING_SCHEMA } },
+  });
+
+  const text = response.content
+    .filter((block): block is Anthropic.TextBlock => block.type === "text")
+    .map((block) => block.text)
+    .join("");
+
+  try {
+    const parsed = JSON.parse(text) as Partial<Draft>;
+    if (
+      typeof parsed.thread !== "string" ||
+      typeof parsed.reading !== "string" ||
+      typeof parsed.quote !== "string" ||
+      typeof parsed.line !== "string"
+    ) {
+      return null;
+    }
+    return parsed as Draft;
+  } catch {
+    return null;
+  }
+}
+
+function draftText(d: Draft): string {
+  return [d.thread, d.reading, d.quote, d.line].join(" ");
+}
+
 export async function POST(req: NextRequest): Promise<NextResponse> {
   let raw: RequestBody;
   try {
@@ -149,36 +178,26 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const client = new Anthropic();
     const { system, user } = buildPrompt(v.western, v.animal, v.element, v.tone, v.lockedThread, v.onlyPart);
 
-    const response = await client.messages.create({
-      model: MODEL,
-      max_tokens: MAX_TOKENS,
-      thinking: { type: "disabled" },
-      system,
-      messages: [{ role: "user", content: user }],
-      output_config: { format: { type: "json_schema", schema: READING_SCHEMA } },
-    });
+    let draft = await generateOnce(client, system, user);
+    if (!draft) return offline(v);
 
-    const text = response.content
-      .filter((block): block is Anthropic.TextBlock => block.type === "text")
-      .map((block) => block.text)
-      .join("");
-
-    const parsed = JSON.parse(text) as Partial<Record<keyof typeof READING_SCHEMA.properties, string>>;
-    if (
-      typeof parsed.thread !== "string" ||
-      typeof parsed.reading !== "string" ||
-      typeof parsed.quote !== "string" ||
-      typeof parsed.line !== "string"
-    ) {
-      return offline(v);
+    // Enforce the banned list: one corrective rewrite when something slips through.
+    const violations = findViolations(draftText(draft));
+    if (violations.length > 0) {
+      const retryUser =
+        user +
+        `\n\nYour previous draft broke these voice rules: ${violations.join("; ")}.` +
+        ` Write a fresh version that keeps the same thread ("${draft.thread}") and breaks none of the rules.`;
+      const retry = await generateOnce(client, system, retryUser);
+      if (retry) draft = retry;
     }
 
     const reading: Reading = {
       // On a per-section reword the thread is locked; never let the model change it.
-      thread: scrub(v.lockedThread ?? parsed.thread),
-      reading: scrub(parsed.reading),
-      quote: scrub(parsed.quote),
-      line: scrub(parsed.line),
+      thread: scrubAll(v.lockedThread ?? draft.thread),
+      reading: scrubAll(draft.reading),
+      quote: scrubAll(draft.quote),
+      line: scrubAll(draft.line),
       source: "ai",
     };
     return NextResponse.json(reading);
