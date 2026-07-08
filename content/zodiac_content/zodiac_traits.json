@@ -1,0 +1,461 @@
+{
+  "western_signs": [
+    {
+      "name": "Aries",
+      "traits": [
+        "Bold",
+        "impulsive",
+        "driven by instinct and initiation"
+      ],
+      "blurb": "Bold, impulsive, driven by instinct and initiation.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Taurus",
+      "traits": [
+        "Grounded",
+        "steady",
+        "values stability and persistence"
+      ],
+      "blurb": "Grounded, steady, values stability and persistence.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Gemini",
+      "traits": [
+        "Curious",
+        "witty",
+        "thrives on communication and change"
+      ],
+      "blurb": "Curious, witty, thrives on communication and change.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Cancer",
+      "traits": [
+        "Nurturing",
+        "protective",
+        "deeply intuitive and emotional"
+      ],
+      "blurb": "Nurturing, protective, deeply intuitive and emotional.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Leo",
+      "traits": [
+        "Charismatic",
+        "warm",
+        "shines in leadership and loyalty"
+      ],
+      "blurb": "Charismatic, warm, shines in leadership and loyalty.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Virgo",
+      "traits": [
+        "Analytical",
+        "reserved",
+        "values order and quiet strength"
+      ],
+      "blurb": "Analytical, reserved, values order and quiet strength.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06",
+        "note": "Matches tradition; conventional sources also emphasize practical and service-oriented, absent here. Omission, not error."
+      }
+    },
+    {
+      "name": "Libra",
+      "traits": [
+        "Balanced",
+        "perceptive",
+        "harmony-seeking and diplomatic"
+      ],
+      "blurb": "Balanced, perceptive, harmony-seeking and diplomatic.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Scorpio",
+      "traits": [
+        "Intense",
+        "private",
+        "emotionally deep and discerning"
+      ],
+      "blurb": "Intense, private, emotionally deep and discerning.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Sagittarius",
+      "traits": [
+        "Adventurous",
+        "idealistic",
+        "thrives on truth and freedom"
+      ],
+      "blurb": "Adventurous, idealistic, thrives on truth and freedom.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Capricorn",
+      "traits": [
+        "Disciplined",
+        "structured",
+        "values work and long-term goals"
+      ],
+      "blurb": "Disciplined, structured, values work and long-term goals.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Aquarius",
+      "traits": [
+        "Innovative",
+        "unconventional",
+        "values vision and independence"
+      ],
+      "blurb": "Innovative, unconventional, values vision and independence.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Pisces",
+      "traits": [
+        "Dreamy",
+        "artistic",
+        "deeply empathetic and emotionally complex"
+      ],
+      "blurb": "Dreamy, artistic, deeply empathetic and emotionally complex.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    }
+  ],
+  "chinese_animals": [
+    {
+      "name": "Rat",
+      "traits": [
+        "Clever",
+        "adaptable",
+        "thrives under pressure"
+      ],
+      "blurb": "Clever, adaptable, thrives under pressure.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Ox",
+      "traits": [
+        "Strong",
+        "patient",
+        "determined in quiet ways"
+      ],
+      "blurb": "Strong, patient, determined in quiet ways.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Tiger",
+      "traits": [
+        "Brave",
+        "competitive",
+        "born to lead or rebel"
+      ],
+      "blurb": "Brave, competitive, born to lead or rebel.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Rabbit",
+      "traits": [
+        "Gentle",
+        "intuitive",
+        "sensitive to emotion and beauty"
+      ],
+      "blurb": "Gentle, intuitive, sensitive to emotion and beauty.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Dragon",
+      "traits": [
+        "Dynamic",
+        "proud",
+        "built for transformation and risk"
+      ],
+      "blurb": "Dynamic, proud, built for transformation and risk.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06",
+        "note": "\"Built for transformation and risk\" is interpretive; traditional core is confident, ambitious, energetic. Consistent."
+      }
+    },
+    {
+      "name": "Snake",
+      "traits": [
+        "Wise",
+        "strategic",
+        "holds knowledge like a weapon"
+      ],
+      "blurb": "Wise, strategic, holds knowledge like a weapon.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06",
+        "note": "Core (wise, strategic, intuitive) matches tradition; \"holds knowledge like a weapon\" is an edgier shading than the traditional enigmatic/refined archetype. Accurate base, stylistic choice flagged."
+      }
+    },
+    {
+      "name": "Horse",
+      "traits": [
+        "Energetic",
+        "free-spirited",
+        "often restless but loyal"
+      ],
+      "blurb": "Energetic, free-spirited, often restless but loyal.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Goat",
+      "traits": [
+        "Kind",
+        "creative",
+        "thrives in calm and beauty"
+      ],
+      "blurb": "Kind, creative, thrives in calm and beauty.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Monkey",
+      "traits": [
+        "Playful",
+        "curious",
+        "thrives in chaos and invention"
+      ],
+      "blurb": "Playful, curious, thrives in chaos and invention.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Rooster",
+      "traits": [
+        "Observant",
+        "blunt",
+        "speaks truth without apology"
+      ],
+      "blurb": "Observant, blunt, speaks truth without apology.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Dog",
+      "traits": [
+        "Loyal",
+        "just",
+        "thrives in service and protection"
+      ],
+      "blurb": "Loyal, just, thrives in service and protection.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "name": "Pig",
+      "traits": [
+        "Joyful",
+        "sincere",
+        "finds strength in softness and care"
+      ],
+      "blurb": "Joyful, sincere, finds strength in softness and care.",
+      "source": "user_definitions_sheet",
+      "verification": {
+        "status": "VERIFIED",
+        "standard": "mainstream traditional attribution",
+        "date": "2026-07-06"
+      }
+    }
+  ],
+  "chinese_elements": [
+    {
+      "name": "Wood",
+      "traits": [
+        "growing",
+        "generous",
+        "flexible",
+        "idealistic"
+      ],
+      "blurb": "Wood reaches toward the light. Wood people grow through connection, stretch past old limits, and bring others along as they rise.",
+      "flavor_clause": "steadied by Wood’s patient growth toward the light",
+      "source": "claude_draft",
+      "status": "DRAFT_NEEDS_REVIEW",
+      "verification": {
+        "status": "VERIFIED_AGAINST_WU_XING_SOURCES",
+        "date": "2026-07-06",
+        "note": "Traits corroborated against multiple Wu Xing personality references; wording remains Claude draft pending your voice edit."
+      }
+    },
+    {
+      "name": "Fire",
+      "traits": [
+        "passionate",
+        "dynamic",
+        "warm",
+        "decisive"
+      ],
+      "blurb": "Fire moves first and warms the room. Fire people carry momentum, spark courage in others, and turn intention into motion.",
+      "flavor_clause": "lit by Fire’s warmth and momentum",
+      "source": "claude_draft",
+      "status": "DRAFT_NEEDS_REVIEW",
+      "verification": {
+        "status": "VERIFIED_AGAINST_WU_XING_SOURCES",
+        "date": "2026-07-06",
+        "note": "Traits corroborated against multiple Wu Xing personality references; wording remains Claude draft pending your voice edit."
+      }
+    },
+    {
+      "name": "Earth",
+      "traits": [
+        "stable",
+        "honest",
+        "nurturing",
+        "patient"
+      ],
+      "blurb": "Earth holds the center. Earth people offer steady ground, keep their word, and make room for others to rest and rebuild.",
+      "flavor_clause": "held by Earth’s steady, patient ground",
+      "source": "claude_draft",
+      "status": "DRAFT_NEEDS_REVIEW",
+      "verification": {
+        "status": "VERIFIED_AGAINST_WU_XING_SOURCES",
+        "date": "2026-07-06",
+        "note": "Traits corroborated against multiple Wu Xing personality references; wording remains Claude draft pending your voice edit."
+      }
+    },
+    {
+      "name": "Metal",
+      "traits": [
+        "disciplined",
+        "clear",
+        "resolute",
+        "precise"
+      ],
+      "blurb": "Metal keeps its edge. Metal people value clarity, follow through with quiet resolve, and cut through noise to what matters.",
+      "flavor_clause": "sharpened by Metal’s clear resolve",
+      "source": "claude_draft",
+      "status": "DRAFT_NEEDS_REVIEW",
+      "verification": {
+        "status": "VERIFIED_AGAINST_WU_XING_SOURCES",
+        "date": "2026-07-06",
+        "note": "Traits corroborated against multiple Wu Xing personality references; wording remains Claude draft pending your voice edit."
+      }
+    },
+    {
+      "name": "Water",
+      "traits": [
+        "wise",
+        "intuitive",
+        "adaptable",
+        "deep"
+      ],
+      "blurb": "Water finds the way through. Water people read the currents beneath the surface, adapt without losing themselves, and carry deep wisdom lightly.",
+      "flavor_clause": "carried by Water’s deep intuition",
+      "source": "claude_draft",
+      "status": "DRAFT_NEEDS_REVIEW",
+      "verification": {
+        "status": "VERIFIED_AGAINST_WU_XING_SOURCES",
+        "date": "2026-07-06",
+        "note": "Traits corroborated against multiple Wu Xing personality references; wording remains Claude draft pending your voice edit."
+      }
+    }
+  ]
+}

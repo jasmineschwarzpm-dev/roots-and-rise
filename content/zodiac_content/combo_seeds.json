@@ -1,0 +1,949 @@
+{
+  "note": "Core tone and keywords salvaged from Roots & Rise matrix. Blank a seed to fall back to pure trait blending.",
+  "seeds": [
+    {
+      "western": "Aries",
+      "chinese": "Rat",
+      "core_tone": "Strategic + Driven",
+      "keywords": "Focused ambition, clever navigation"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Ox",
+      "core_tone": "Grounded + Assertive",
+      "keywords": "Hard-earned progress, internal strength"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Tiger",
+      "core_tone": "Bold + Magnetic",
+      "keywords": "Commanding presence, untamed loyalty"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Rabbit",
+      "core_tone": "Empathic + Resilient",
+      "keywords": "Sensitivity in motion, subtle strength"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Dragon",
+      "core_tone": "Transformative + Fearless",
+      "keywords": "Catalyst energy, radical honesty"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Snake",
+      "core_tone": "Focused + Intuitive",
+      "keywords": "Tactful power, vision with restraint"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Horse",
+      "core_tone": "Free-Spirited + Loyal",
+      "keywords": "Passionate action, fearless independence"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Goat",
+      "core_tone": "Creative + Spirited",
+      "keywords": "Artistry with conviction, steady fire",
+      "revised": true,
+      "previous": {
+        "core_tone": "Creative + Steady",
+        "keywords": "Artistry with conviction, quiet flame"
+      },
+      "archetype_kinship": "the ram and the goat, horned climbers"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Monkey",
+      "core_tone": "Curious + Restless",
+      "keywords": "Inventive drive, energetic divergence"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Rooster",
+      "core_tone": "Blunt + Unapologetic",
+      "keywords": "Direct truth, sharp clarity"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Dog",
+      "core_tone": "Protective + Courageous",
+      "keywords": "Loyal advocate, boundary guardian"
+    },
+    {
+      "western": "Aries",
+      "chinese": "Pig",
+      "core_tone": "Fierce + Heart-Centered",
+      "keywords": "Joy as strength, quiet rebellion"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Rat",
+      "core_tone": "Resilient + Calculated",
+      "keywords": "Determined focus, measured strength"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Ox",
+      "core_tone": "Rooted + Enduring",
+      "keywords": "Patient resolve, unshakable presence",
+      "archetype_kinship": "both bovine, the bull and the ox"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Tiger",
+      "core_tone": "Strong-Willed + Unconventional",
+      "keywords": "Commanding change, inner control"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Rabbit",
+      "core_tone": "Nurturing + Grounded",
+      "keywords": "Emotional steadiness, earthbound care"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Dragon",
+      "core_tone": "Powerful + Steady",
+      "keywords": "Stable force, transformational resilience"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Snake",
+      "core_tone": "Deliberate + Wise",
+      "keywords": "Strategic stillness, anchored wisdom"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Horse",
+      "core_tone": "Solid + Independent",
+      "keywords": "Dependable rhythm, bold spirit"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Goat",
+      "core_tone": "Gentle + Creative",
+      "keywords": "Soft power, artistic foundation"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Monkey",
+      "core_tone": "Thoughtful + Adaptive",
+      "keywords": "Flexible insight, grounded curiosity"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Rooster",
+      "core_tone": "Disciplined + Clear",
+      "keywords": "Quiet authority, steady direction"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Dog",
+      "core_tone": "Faithful + Protective",
+      "keywords": "Loyal structure, heartfelt protection"
+    },
+    {
+      "western": "Taurus",
+      "chinese": "Pig",
+      "core_tone": "Kind + Grounded",
+      "keywords": "Steady compassion, strength through kindness"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Rat",
+      "core_tone": "Clever + Communicative",
+      "keywords": "Verbal agility, strategic clarity"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Ox",
+      "core_tone": "Disciplined + Expressive",
+      "keywords": "Reliable structure, mental agility"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Tiger",
+      "core_tone": "Magnetic + Dynamic",
+      "keywords": "Bold exchange, lively presence"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Rabbit",
+      "core_tone": "Perceptive + Playful",
+      "keywords": "Empathic conversation, light-hearted insight"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Dragon",
+      "core_tone": "Transformative + Quick-Witted",
+      "keywords": "Reinvention through intellect, fearless mind"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Snake",
+      "core_tone": "Analytical + Smooth",
+      "keywords": "Focused knowledge, measured intention",
+      "revised": true,
+      "previous": {
+        "keywords": "Focused knowledge, hidden intention"
+      }
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Horse",
+      "core_tone": "Restless + Loyal",
+      "keywords": "Loyal expression, driven movement"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Goat",
+      "core_tone": "Creative + Thoughtful",
+      "keywords": "Soft intelligence, artistic charm"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Monkey",
+      "core_tone": "Inventive + Curious",
+      "keywords": "Curiosity as instinct, innovation as rhythm"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Rooster",
+      "core_tone": "Direct + Sharp",
+      "keywords": "Unfiltered precision, mental clarity"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Dog",
+      "core_tone": "Honest + Agile",
+      "keywords": "Open truth, flexible integrity"
+    },
+    {
+      "western": "Gemini",
+      "chinese": "Pig",
+      "core_tone": "Kind + Spontaneous",
+      "keywords": "Playful insight, open-hearted exploration"
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Rat",
+      "core_tone": "Protective + Perceptive",
+      "keywords": "Understated power, protective wit",
+      "revised": true,
+      "previous": {
+        "keywords": "Subtle strength, protective wit"
+      }
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Ox",
+      "core_tone": "Steady + Intuitive",
+      "keywords": "Patience with deep feeling, unshaken care"
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Tiger",
+      "core_tone": "Brave + Soft-Spoken",
+      "keywords": "Soft defiance, emotional courage"
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Rabbit",
+      "core_tone": "Gentle + Powerful",
+      "keywords": "Compassion as power, steadfast tenderness",
+      "revised": true,
+      "previous": {
+        "keywords": "Compassion as power, quiet conviction"
+      }
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Dragon",
+      "core_tone": "Devoted + Dynamic",
+      "keywords": "Enduring heart, transformative warmth",
+      "revised": true,
+      "previous": {
+        "core_tone": "Resilient + Insightful",
+        "keywords": "Enduring heart, reflective wisdom"
+      }
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Snake",
+      "core_tone": "Cautious + Wise",
+      "keywords": "Instinctive caution, emotional legacy"
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Horse",
+      "core_tone": "Nurturing + Untamed",
+      "keywords": "Loving defiance, boundless energy",
+      "revised": true,
+      "previous": {
+        "core_tone": "Nurturing + Unruly"
+      }
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Goat",
+      "core_tone": "Creative + Loyal",
+      "keywords": "Deeply rooted, soulfully expressive"
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Monkey",
+      "core_tone": "Playful + Watchful",
+      "keywords": "Joyful defense, clever protection"
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Rooster",
+      "core_tone": "Truthful + Private",
+      "keywords": "Sharp honesty, gentle solitude"
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Dog",
+      "core_tone": "Grounded + Caring",
+      "keywords": "Guarded kindness, protective light"
+    },
+    {
+      "western": "Cancer",
+      "chinese": "Pig",
+      "core_tone": "Tender + Fierce",
+      "keywords": "Fierce loyalty, velvet strength",
+      "revised": true,
+      "previous": {
+        "keywords": "Fierce loyalty, soft power"
+      }
+    },
+    {
+      "western": "Leo",
+      "chinese": "Rat",
+      "core_tone": "Commanding + Clever",
+      "keywords": "Quick-witted charisma, magnetic presence",
+      "revised": true,
+      "previous": {
+        "keywords": "Cunning charisma, magnetic presence"
+      }
+    },
+    {
+      "western": "Leo",
+      "chinese": "Ox",
+      "core_tone": "Grounded + Regal",
+      "keywords": "Firm values, enduring self-respect"
+    },
+    {
+      "western": "Leo",
+      "chinese": "Tiger",
+      "core_tone": "Fiery + Courageous",
+      "keywords": "Unapologetic bravery, fierce affection",
+      "archetype_kinship": "two great cats, mane and stripe"
+    },
+    {
+      "western": "Leo",
+      "chinese": "Rabbit",
+      "core_tone": "Warm + Quietly Powerful",
+      "keywords": "Generosity with boundaries, light in stillness"
+    },
+    {
+      "western": "Leo",
+      "chinese": "Dragon",
+      "core_tone": "Radiant + Transformational",
+      "keywords": "Big-hearted shifts, glowing resilience"
+    },
+    {
+      "western": "Leo",
+      "chinese": "Snake",
+      "core_tone": "Charismatic + Strategic",
+      "keywords": "Thoughtful charm, calm persuasion"
+    },
+    {
+      "western": "Leo",
+      "chinese": "Horse",
+      "core_tone": "Bold + Loyal",
+      "keywords": "Daring devotion, energetic spirit"
+    },
+    {
+      "western": "Leo",
+      "chinese": "Goat",
+      "core_tone": "Compassionate + Centered",
+      "keywords": "Warm counsel, steady radiance",
+      "revised": true,
+      "previous": {
+        "keywords": "Gentle guidance, rooted vision"
+      }
+    },
+    {
+      "western": "Leo",
+      "chinese": "Monkey",
+      "core_tone": "Playful + Dominant",
+      "keywords": "Commanding play, bright intelligence"
+    },
+    {
+      "western": "Leo",
+      "chinese": "Rooster",
+      "core_tone": "Proud + Precise",
+      "keywords": "Refined insight, visible clarity"
+    },
+    {
+      "western": "Leo",
+      "chinese": "Dog",
+      "core_tone": "Protective + Just",
+      "keywords": "Loyal judgment, guardian strength"
+    },
+    {
+      "western": "Leo",
+      "chinese": "Pig",
+      "core_tone": "Joyful + Magnetic",
+      "keywords": "Magnetism through joy, strength in softness"
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Rat",
+      "core_tone": "Precise + Strategic",
+      "keywords": "Sharp attention, resourceful delivery"
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Ox",
+      "core_tone": "Steady + Methodical",
+      "keywords": "Deliberate pace, grounded endurance"
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Tiger",
+      "core_tone": "Focused + Discerning",
+      "keywords": "Confident restraint, exacting drive"
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Rabbit",
+      "core_tone": "Gentle + Intentional",
+      "keywords": "Empathy with purpose, calm clarity"
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Dragon",
+      "core_tone": "Quiet + Transformative",
+      "keywords": "Humble power, sustainable change"
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Snake",
+      "core_tone": "Precise + Perceptive",
+      "keywords": "Distilled wisdom, quiet boundaries",
+      "revised": true,
+      "previous": {
+        "core_tone": "Wise + Controlled",
+        "keywords": "Calculating wisdom, refined boundaries"
+      }
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Horse",
+      "core_tone": "Independent + Practical",
+      "keywords": "Freedom through structure, emotional clarity"
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Goat",
+      "core_tone": "Devoted + Discerning",
+      "keywords": "Gentle guidance, dependable loyalty",
+      "revised": true,
+      "previous": {
+        "core_tone": "Loyal + Reflective"
+      }
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Monkey",
+      "core_tone": "Inventive + Subtle",
+      "keywords": "Playful analysis, thoughtful originality"
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Rooster",
+      "core_tone": "Direct + Insightful",
+      "keywords": "Honest efficiency, mental presence"
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Dog",
+      "core_tone": "Protective + Observant",
+      "keywords": "Guarded care, perceptive loyalty"
+    },
+    {
+      "western": "Virgo",
+      "chinese": "Pig",
+      "core_tone": "Compassionate + Measured",
+      "keywords": "Kind discernment, steady resilience"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Rat",
+      "core_tone": "Balanced + Thoughtful",
+      "keywords": "Calm navigation, insightful fairness"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Ox",
+      "core_tone": "Rooted + Diplomatic",
+      "keywords": "Steady resolve, respectful negotiation"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Tiger",
+      "core_tone": "Elegant + Bold",
+      "keywords": "Courage through grace, balanced energy"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Rabbit",
+      "core_tone": "Peaceful + Discerning",
+      "keywords": "Quiet peace, intentional boundaries"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Dragon",
+      "core_tone": "Magnetic + Harmonizing",
+      "keywords": "Leadership through harmony, persuasive presence"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Snake",
+      "core_tone": "Graceful + Perceptive",
+      "keywords": "Poised awareness, inward elegance"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Horse",
+      "core_tone": "Charming + Independent",
+      "keywords": "Freedom in diplomacy, tactful strength"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Goat",
+      "core_tone": "Gentle + Fair",
+      "keywords": "Kindness as clarity, honest dialogue"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Monkey",
+      "core_tone": "Witty + Reflective",
+      "keywords": "Playful thoughtfulness, balanced curiosity"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Rooster",
+      "core_tone": "Clear + Discerning",
+      "keywords": "Direct fairness, steady intellect"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Dog",
+      "core_tone": "Loyal + Justice-Oriented",
+      "keywords": "Steadfast empathy, wise discernment"
+    },
+    {
+      "western": "Libra",
+      "chinese": "Pig",
+      "core_tone": "Open + Emotionally Intelligent",
+      "keywords": "Open-hearted balance, relational depth",
+      "revised": true,
+      "previous": {
+        "keywords": "Emotional clarity, relational depth"
+      }
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Rat",
+      "core_tone": "Focused + Strategic",
+      "keywords": "Sharp instinct, emotional depth",
+      "revised": true,
+      "previous": {
+        "keywords": "Mental clarity, emotional depth"
+      }
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Ox",
+      "core_tone": "Grounded + Intense",
+      "keywords": "Silent strength, solid foundation"
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Tiger",
+      "core_tone": "Fierce + Controlled",
+      "keywords": "Contained fire, fearless control"
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Rabbit",
+      "core_tone": "Private + Perceptive",
+      "keywords": "Inner wisdom, quiet presence"
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Dragon",
+      "core_tone": "Magnetic + Transformative",
+      "keywords": "Transformational force, attractive stillness"
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Snake",
+      "core_tone": "Wise + Potent",
+      "keywords": "Truth in silence, calculated presence"
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Horse",
+      "core_tone": "Bold + Unapologetic",
+      "keywords": "Courage without pretense, deep instincts"
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Goat",
+      "core_tone": "Soft-Spoken + Resilient",
+      "keywords": "Compassion with backbone, enduring warmth"
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Monkey",
+      "core_tone": "Clever + Depth-Oriented",
+      "keywords": "Layered humor, piercing insight"
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Rooster",
+      "core_tone": "Sharp + Composed",
+      "keywords": "Unflinching honesty, composed reaction"
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Dog",
+      "core_tone": "Loyal + Introspective",
+      "keywords": "Protective loyalty, mindful emotion"
+    },
+    {
+      "western": "Scorpio",
+      "chinese": "Pig",
+      "core_tone": "Tender + Unshakable",
+      "keywords": "Sensitive strength, grounded grace"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Rat",
+      "core_tone": "Curious + Bold",
+      "keywords": "Seeker energy, fearless questions"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Ox",
+      "core_tone": "Grounded + Expansive",
+      "keywords": "Practical wisdom, elevated thinking"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Tiger",
+      "core_tone": "Adventurous + Commanding",
+      "keywords": "Loud clarity, fearless exploration"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Rabbit",
+      "core_tone": "Gentle + Philosophical",
+      "keywords": "Calm philosophy, heartfelt insight"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Dragon",
+      "core_tone": "Adventurous + Catalytic",
+      "keywords": "Big-hearted change, radiant vision",
+      "revised": true,
+      "previous": {
+        "core_tone": "Transformative + Visionary"
+      }
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Snake",
+      "core_tone": "Strategic + Free-Spirited",
+      "keywords": "Freedom through purpose, intelligent rebellion"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Horse",
+      "core_tone": "Brave + Restless",
+      "keywords": "Courageous learning, spirited challenge",
+      "archetype_kinship": "the centaur and the horse, both born running"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Goat",
+      "core_tone": "Creative + Idealistic",
+      "keywords": "Open-hearted invention, hopeful direction"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Monkey",
+      "core_tone": "Witty + Expansive",
+      "keywords": "Laughter with depth, vibrant curiosity"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Rooster",
+      "core_tone": "Sharp + Direct",
+      "keywords": "Unapologetic truth, honest delivery"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Dog",
+      "core_tone": "Loyal + Independent",
+      "keywords": "Devotion to meaning, quiet conviction"
+    },
+    {
+      "western": "Sagittarius",
+      "chinese": "Pig",
+      "core_tone": "Joyful + Purposeful",
+      "keywords": "Expansive joy, directional clarity"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Rat",
+      "core_tone": "Strategic + Determined",
+      "keywords": "Clever leadership, measured action"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Ox",
+      "core_tone": "Structured + Enduring",
+      "keywords": "Enduring commitment, inner fortitude"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Tiger",
+      "core_tone": "Focused + Brave",
+      "keywords": "Calculated risk, unwavering effort"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Rabbit",
+      "core_tone": "Patient + Insightful",
+      "keywords": "Emotional patience, thoughtful timing"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Dragon",
+      "core_tone": "Powerful + Resilient",
+      "keywords": "Transformative momentum, anchored will"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Snake",
+      "core_tone": "Wise + Controlled",
+      "keywords": "Earned authority, patient strategy",
+      "revised": true,
+      "previous": {
+        "keywords": "Truth in silence, earned authority"
+      }
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Horse",
+      "core_tone": "Independent + Grounded",
+      "keywords": "Freedom through discipline, rooted identity"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Goat",
+      "core_tone": "Quiet + Unshakable",
+      "keywords": "Stable presence, resilient grace",
+      "archetype_kinship": "the sea-goat and the goat, one animal in two skies"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Monkey",
+      "core_tone": "Inventive + Steady",
+      "keywords": "Creative control, honest progress"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Rooster",
+      "core_tone": "Direct + Reflective",
+      "keywords": "Sharp timing, introspective pace"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Dog",
+      "core_tone": "Loyal + Structured",
+      "keywords": "Reliable guidance, protective focus"
+    },
+    {
+      "western": "Capricorn",
+      "chinese": "Pig",
+      "core_tone": "Soft + Steady",
+      "keywords": "Gentle consistency, slow strength"
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Rat",
+      "core_tone": "Innovative + Grounded",
+      "keywords": "Inventive clarity, rooted disruption"
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Ox",
+      "core_tone": "Visionary + Disciplined",
+      "keywords": "Structured change, elevated insight"
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Tiger",
+      "core_tone": "Unconventional + Bold",
+      "keywords": "Rebellious wisdom, bold awareness"
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Rabbit",
+      "core_tone": "Thoughtful + Inventive",
+      "keywords": "Quiet originality, intentional motion"
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Dragon",
+      "core_tone": "Transformative + Electric",
+      "keywords": "Energetic renewal, vision-led action"
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Snake",
+      "core_tone": "Insightful + Magnetic",
+      "keywords": "Compelling stillness, strategic presence"
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Horse",
+      "core_tone": "Inventive + Untamed",
+      "keywords": "Unpredictable loyalty, driving curiosity",
+      "revised": true,
+      "previous": {
+        "core_tone": "Free-Spirited + Loyal"
+      }
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Goat",
+      "core_tone": "Gentle + Unique",
+      "keywords": "Compassion in contrast, soft certainty"
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Monkey",
+      "core_tone": "Inventive + Playful",
+      "keywords": "Thoughtful humor, endless perspective",
+      "revised": true,
+      "previous": {
+        "core_tone": "Witty + Expansive"
+      }
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Rooster",
+      "core_tone": "Clear + Clever",
+      "keywords": "Verbal precision, sharp focus"
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Dog",
+      "core_tone": "Protective + Rebellious",
+      "keywords": "Truth-seeking loyalty, rule-breaking care"
+    },
+    {
+      "western": "Aquarius",
+      "chinese": "Pig",
+      "core_tone": "Curious + Kind",
+      "keywords": "Playful questioning, grounded empathy"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Rat",
+      "core_tone": "Empathic + Clever",
+      "keywords": "Emotional insight, adaptable thinking"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Ox",
+      "core_tone": "Quiet + Resilient",
+      "keywords": "Calm persistence, inner trust"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Tiger",
+      "core_tone": "Dreamy + Fierce",
+      "keywords": "Imaginative power, bold vulnerability"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Rabbit",
+      "core_tone": "Gentle + Deep",
+      "keywords": "Soft honesty, vast perception"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Dragon",
+      "core_tone": "Transformative + Visionary",
+      "keywords": "Dream-driven change, emotional brilliance",
+      "revised": true,
+      "previous": {
+        "keywords": "Big-hearted shifts, emotional brilliance"
+      }
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Snake",
+      "core_tone": "Spiritual + Observant",
+      "keywords": "Subtle perception, guided wisdom"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Horse",
+      "core_tone": "Free-Spirited + Introspective",
+      "keywords": "Reflective energy, spirited depth"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Goat",
+      "core_tone": "Creative + Grounded",
+      "keywords": "Soulful creativity, rooted vision"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Monkey",
+      "core_tone": "Curious + Soft-Spoken",
+      "keywords": "Inventive warmth, inner questions"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Rooster",
+      "core_tone": "Sensitive + Focused",
+      "keywords": "Empathic clarity, sharp intuition"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Dog",
+      "core_tone": "Loyal + Reflective",
+      "keywords": "Emotional loyalty, spiritual grounding"
+    },
+    {
+      "western": "Pisces",
+      "chinese": "Pig",
+      "core_tone": "Joyful + Intuitive",
+      "keywords": "Expansive feeling, instinctive direction"
+    }
+  ]
+}

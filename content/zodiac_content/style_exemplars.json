@@ -1,0 +1,536 @@
+{
+  "exemplars": [
+    {
+      "id": "SB011",
+      "tone": "grounded",
+      "western": "Aquarius",
+      "chinese": "Snake",
+      "text": "Insight deepens your creative spark."
+    },
+    {
+      "id": "SB026",
+      "tone": "grounded",
+      "western": "Cancer",
+      "chinese": "Dragon",
+      "text": "Emotion and power are not opposites. You embody both."
+    },
+    {
+      "id": "SB029",
+      "tone": "grounded",
+      "western": "Cancer",
+      "chinese": "Monkey",
+      "text": "Your playful mind holds deep compassion at its core."
+    },
+    {
+      "id": "SB040",
+      "tone": "grounded",
+      "western": "Capricorn",
+      "chinese": "Horse",
+      "text": "Freedom rests on your inner discipline."
+    },
+    {
+      "id": "SB044",
+      "tone": "grounded",
+      "western": "Capricorn",
+      "chinese": "Rabbit",
+      "text": "You nurture growth through consistent care."
+    },
+    {
+      "id": "SB048",
+      "tone": "grounded",
+      "western": "Gemini",
+      "chinese": "Dog",
+      "text": "Loyalty shapes how you speak: with care, with conviction.",
+      "original": "Loyalty shapes how you speak—with care, with conviction.",
+      "edited": "punctuation/banned word, pending user approval"
+    },
+    {
+      "id": "SB050",
+      "tone": "grounded",
+      "western": "Gemini",
+      "chinese": "Goat",
+      "text": "You create space where understanding can settle."
+    },
+    {
+      "id": "SB053",
+      "tone": "grounded",
+      "western": "Gemini",
+      "chinese": "Ox",
+      "text": "You hold curiosity with care, letting it deepen rather than scatter."
+    },
+    {
+      "id": "SB061",
+      "tone": "grounded",
+      "western": "Leo",
+      "chinese": "Dragon",
+      "text": "You channel power through presence, not performance."
+    },
+    {
+      "id": "SB065",
+      "tone": "grounded",
+      "western": "Leo",
+      "chinese": "Ox",
+      "text": "You embody strength that does not seek applause."
+    },
+    {
+      "id": "SB067",
+      "tone": "grounded",
+      "western": "Leo",
+      "chinese": "Rabbit",
+      "text": "Your warmth invites trust; your resolve maintains it."
+    },
+    {
+      "id": "SB076",
+      "tone": "grounded",
+      "western": "Libra",
+      "chinese": "Monkey",
+      "text": "Playfulness serves your discerning mind."
+    },
+    {
+      "id": "SB082",
+      "tone": "grounded",
+      "western": "Libra",
+      "chinese": "Snake",
+      "text": "Subtle perception guides your steady path."
+    },
+    {
+      "id": "SB085",
+      "tone": "grounded",
+      "western": "Pisces",
+      "chinese": "Dragon",
+      "text": "Vision deepens through your intuitive knowing."
+    },
+    {
+      "id": "SB089",
+      "tone": "grounded",
+      "western": "Pisces",
+      "chinese": "Ox",
+      "text": "Sensitivity strengthens your steadfast presence."
+    },
+    {
+      "id": "SB091",
+      "tone": "grounded",
+      "western": "Pisces",
+      "chinese": "Rabbit",
+      "text": "You cultivate depth through quiet empathy."
+    },
+    {
+      "id": "SB103",
+      "tone": "grounded",
+      "western": "Sagittarius",
+      "chinese": "Rabbit",
+      "text": "You honor freedom that fosters connection."
+    },
+    {
+      "id": "SB104",
+      "tone": "grounded",
+      "western": "Sagittarius",
+      "chinese": "Rat",
+      "text": "Curiosity roots your sense of direction."
+    },
+    {
+      "id": "SB106",
+      "tone": "grounded",
+      "western": "Sagittarius",
+      "chinese": "Snake",
+      "text": "You blend wisdom with a restless spirit."
+    },
+    {
+      "id": "SB117",
+      "tone": "grounded",
+      "western": "Scorpio",
+      "chinese": "Rooster",
+      "text": "You speak truths honed by deep reflection."
+    },
+    {
+      "id": "SB120",
+      "tone": "grounded",
+      "western": "Taurus",
+      "chinese": "Dog",
+      "text": "You protect without performance. The people who know you feel it."
+    },
+    {
+      "id": "SB130",
+      "tone": "grounded",
+      "western": "Taurus",
+      "chinese": "Snake",
+      "text": "You shed what no longer fits. Not out of urgency, but wisdom."
+    },
+    {
+      "id": "SB132",
+      "tone": "grounded",
+      "western": "Virgo",
+      "chinese": "Dragon",
+      "text": "You channel ambition through grounded action."
+    },
+    {
+      "id": "SB144",
+      "tone": "rising",
+      "western": "Aquarius",
+      "chinese": "Dragon",
+      "text": "You elevate ideas into transformative action."
+    },
+    {
+      "id": "SB147",
+      "tone": "rising",
+      "western": "Aquarius",
+      "chinese": "Monkey",
+      "text": "You spark curiosity that leads to growth."
+    },
+    {
+      "id": "SB166",
+      "tone": "rising",
+      "western": "Aries",
+      "chinese": "Tiger",
+      "text": "You leap on instinct and land where others only hope to aim.",
+      "original": "You leap on instinct—and land where others only hope to aim.",
+      "edited": "punctuation/banned word, pending user approval"
+    },
+    {
+      "id": "SB167",
+      "tone": "rising",
+      "western": "Cancer",
+      "chinese": "Dog",
+      "text": "You guard space for others to be wholly seen."
+    },
+    {
+      "id": "SB196",
+      "tone": "rising",
+      "western": "Gemini",
+      "chinese": "Ox",
+      "text": "Thought moves through you like wind through stone: shaping, never eroding.",
+      "original": "Thought moves through you like wind through stone—shaping, never eroding.",
+      "edited": "punctuation/banned word, pending user approval"
+    },
+    {
+      "id": "SB207",
+      "tone": "rising",
+      "western": "Leo",
+      "chinese": "Monkey",
+      "text": "You spark possibility with bold curiosity."
+    },
+    {
+      "id": "SB209",
+      "tone": "rising",
+      "western": "Leo",
+      "chinese": "Pig",
+      "text": "Your compassion elevates, inviting others to expand."
+    },
+    {
+      "id": "SB215",
+      "tone": "rising",
+      "western": "Libra",
+      "chinese": "Dog",
+      "text": "You protect fairness with unwavering heart."
+    },
+    {
+      "id": "SB217",
+      "tone": "rising",
+      "western": "Libra",
+      "chinese": "Goat",
+      "text": "Your nurturing energy shapes lasting beauty."
+    },
+    {
+      "id": "SB220",
+      "tone": "rising",
+      "western": "Libra",
+      "chinese": "Ox",
+      "text": "Each deliberate act builds trust that lasts."
+    },
+    {
+      "id": "SB229",
+      "tone": "rising",
+      "western": "Pisces",
+      "chinese": "Goat",
+      "text": "You inspire renewal through gentle persistence."
+    },
+    {
+      "id": "SB247",
+      "tone": "rising",
+      "western": "Sagittarius",
+      "chinese": "Rat",
+      "text": "You chart new territory with thoughtful steps."
+    },
+    {
+      "id": "SB252",
+      "tone": "rising",
+      "western": "Scorpio",
+      "chinese": "Dragon",
+      "text": "Your ambition aligns with inner wisdom."
+    },
+    {
+      "id": "SB254",
+      "tone": "rising",
+      "western": "Scorpio",
+      "chinese": "Horse",
+      "text": "You pursue freedom with clarity, not haste."
+    },
+    {
+      "id": "SB255",
+      "tone": "rising",
+      "western": "Scorpio",
+      "chinese": "Monkey",
+      "text": "Your curiosity channels profound transformation."
+    },
+    {
+      "id": "SB262",
+      "tone": "rising",
+      "western": "Scorpio",
+      "chinese": "Tiger",
+      "text": "When you strike, it is with full presence."
+    },
+    {
+      "id": "SB277",
+      "tone": "rising",
+      "western": "Virgo",
+      "chinese": "Horse",
+      "text": "Movement is meaningful when aligned with purpose."
+    },
+    {
+      "id": "SB280",
+      "tone": "rising",
+      "western": "Virgo",
+      "chinese": "Pig",
+      "text": "Compassion fuels your tireless pursuit of better."
+    },
+    {
+      "id": "SB294",
+      "tone": "mixed",
+      "western": "Aquarius",
+      "chinese": "Rat",
+      "text": "You turn curiosity into pathways for change."
+    },
+    {
+      "id": "SB302",
+      "tone": "mixed",
+      "western": "Aries",
+      "chinese": "Monkey",
+      "text": "Curiosity moves like fire in you: messy, bright, essential.",
+      "original": "Curiosity moves like fire in you—messy, bright, essential.",
+      "edited": "punctuation/banned word, pending user approval"
+    },
+    {
+      "id": "SB319",
+      "tone": "mixed",
+      "western": "Cancer",
+      "chinese": "Rooster",
+      "text": "You offer insight that settles softly but stays firm.",
+      "original": "You offer insight that lands softly but stays firm.",
+      "edited": "punctuation/banned word, pending user approval"
+    },
+    {
+      "id": "SB334",
+      "tone": "mixed",
+      "western": "Gemini",
+      "chinese": "Dog",
+      "text": "You offer steadiness in dialogue. That’s why your words carry weight."
+    },
+    {
+      "id": "SB337",
+      "tone": "mixed",
+      "western": "Gemini",
+      "chinese": "Horse",
+      "text": "You chase ideas with open hands, knowing when to hold and when to release."
+    },
+    {
+      "id": "SB347",
+      "tone": "mixed",
+      "western": "Leo",
+      "chinese": "Dragon",
+      "text": "You embody leadership that uplifts rather than commands."
+    },
+    {
+      "id": "SB349",
+      "tone": "mixed",
+      "western": "Leo",
+      "chinese": "Horse",
+      "text": "You carry leadership in motion, paced by integrity."
+    },
+    {
+      "id": "SB361",
+      "tone": "mixed",
+      "western": "Libra",
+      "chinese": "Horse",
+      "text": "You ride change with an open, thoughtful heart."
+    },
+    {
+      "id": "SB366",
+      "tone": "mixed",
+      "western": "Libra",
+      "chinese": "Rat",
+      "text": "You create harmony where others seek control."
+    },
+    {
+      "id": "SB370",
+      "tone": "mixed",
+      "western": "Pisces",
+      "chinese": "Dog",
+      "text": "You build belonging through heartfelt presence."
+    },
+    {
+      "id": "SB376",
+      "tone": "mixed",
+      "western": "Pisces",
+      "chinese": "Pig",
+      "text": "You cultivate connection through soulful kindness."
+    },
+    {
+      "id": "SB378",
+      "tone": "mixed",
+      "western": "Pisces",
+      "chinese": "Rat",
+      "text": "You bridge imagination and grounded wisdom."
+    },
+    {
+      "id": "SB391",
+      "tone": "mixed",
+      "western": "Sagittarius",
+      "chinese": "Rooster",
+      "text": "You lead with insight sharpened by perspective."
+    },
+    {
+      "id": "SB392",
+      "tone": "mixed",
+      "western": "Sagittarius",
+      "chinese": "Snake",
+      "text": "You turn curiosity into transformative insight."
+    },
+    {
+      "id": "SB400",
+      "tone": "mixed",
+      "western": "Scorpio",
+      "chinese": "Pig",
+      "text": "You cultivate connection that resonates beyond the moment."
+    },
+    {
+      "id": "SB427",
+      "tone": "mixed",
+      "western": "Virgo",
+      "chinese": "Snake",
+      "text": "You shape outcomes with subtle yet certain touch."
+    }
+  ],
+  "anti_examples": [
+    {
+      "id": "SB013",
+      "tone": "grounded",
+      "text": "Loyalty sits in your bones. It doesn’t bend. It anchors.",
+      "reason": "cut without stated reason"
+    },
+    {
+      "id": "SB046",
+      "tone": "grounded",
+      "text": "Insight moves through your thoughtful cadence.",
+      "reason": "too abstract"
+    },
+    {
+      "id": "SB086",
+      "tone": "grounded",
+      "text": "Creativity rests on your compassionate foundation.",
+      "reason": "cut without stated reason"
+    },
+    {
+      "id": "SB118",
+      "tone": "grounded",
+      "text": "Your perception pierces the surface with grace.",
+      "reason": "too abstractt"
+    },
+    {
+      "id": "SB151",
+      "tone": "rising",
+      "text": "You spark movement where others see walls.",
+      "reason": "cut without stated reason"
+    },
+    {
+      "id": "SB169",
+      "tone": "rising",
+      "text": "Creativity flows from the care you pour into each moment.",
+      "reason": "cut without stated reason"
+    },
+    {
+      "id": "SB192",
+      "tone": "rising",
+      "text": "You weave words into sparks. Each one has weight.",
+      "reason": "cut without stated reason"
+    },
+    {
+      "id": "SB211",
+      "tone": "rising",
+      "text": "You inspire movement without demand—others rise in your presence.",
+      "reason": "cut without stated reason"
+    },
+    {
+      "id": "SB233",
+      "tone": "rising",
+      "text": "You uplift others through intuitive generosity.",
+      "reason": "cut without stated reason"
+    },
+    {
+      "id": "SB256",
+      "tone": "rising",
+      "text": "Strength moves beneath your calm exterior.",
+      "reason": "too abstract"
+    },
+    {
+      "id": "SB257",
+      "tone": "rising",
+      "text": "Joy informs your transformative presence.",
+      "reason": "too abstract"
+    },
+    {
+      "id": "SB298",
+      "tone": "mixed",
+      "text": "You guard what others forget—until they remember who you are.",
+      "reason": "cut without stated reason"
+    },
+    {
+      "id": "SB304",
+      "tone": "mixed",
+      "text": "You move with warmth sharp enough to carve space for others. And yourself.",
+      "reason": "cut without stated reason"
+    },
+    {
+      "id": "SB411",
+      "tone": "mixed",
+      "text": "You don’t chase what’s yours. You prepare, then meet it fully.",
+      "reason": "cut without stated reason"
+    }
+  ],
+  "reword_candidates": [
+    {
+      "id": "SB015",
+      "tone": "grounded",
+      "western": "Aries",
+      "chinese": "Goat",
+      "text": "You build beauty that doesn’t explain itself. It roots in your hands and endures.",
+      "note": "not x but y, but concept is good",
+      "em_dash": false
+    },
+    {
+      "id": "SB016",
+      "tone": "grounded",
+      "western": "Aries",
+      "chinese": "Horse",
+      "text": "You run on instinct, but rest with intention. Freedom is how you breathe.",
+      "note": "dont like the last sentence",
+      "em_dash": false
+    },
+    {
+      "id": "SB030",
+      "tone": "grounded",
+      "western": "Cancer",
+      "chinese": "Ox",
+      "text": "You anchor others through presence alone. It is enough.",
+      "note": "maybe reworded, but close",
+      "em_dash": false
+    }
+  ],
+  "counts": {
+    "exemplars": 57,
+    "by_tone": {
+      "grounded": 23,
+      "rising": 18,
+      "mixed": 16
+    }
+  }
+}

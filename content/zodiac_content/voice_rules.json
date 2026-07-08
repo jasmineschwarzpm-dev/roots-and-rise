@@ -1,0 +1,76 @@
+{
+  "purpose": "Portable generation spec for Roots & Rise readings. Feed this whole object to the model.",
+  "voice": [
+    "warm",
+    "fun",
+    "empowering",
+    "direct",
+    "second person (you)"
+  ],
+  "banned": {
+    "punctuation": [
+      "em dash —",
+      "en dash –"
+    ],
+    "words": [
+      "actually",
+      "lands",
+      "looks like (professional-context sense)"
+    ],
+    "constructions": [
+      "contrast constructions of the form 'it is X, it's Y' / 'not X but Y'",
+      "invented credentials or facts",
+      "over-explanation"
+    ]
+  },
+  "tones": {
+    "grounded": "steady, rooted, quiet strength; affirms who the reader already is",
+    "rising": "forward motion, empowerment, momentum; calls the reader upward",
+    "mixed": "blend of grounded and rising in one breath"
+  },
+  "reading_structure": [
+    {
+      "part": 1,
+      "name": "sign_blurbs",
+      "source": "trait library blurbs (western, element, animal)"
+    },
+    {
+      "part": 2,
+      "name": "combined_reading",
+      "source": "AI blend of western+animal traits anchored by combo seed, woven with element flavor_clause; fallback = template from traits + seed"
+    },
+    {
+      "part": 3,
+      "name": "quote",
+      "source": "AI-generated in style-bank voice; fallback = a kept style bank line for this combo or tone"
+    },
+    {
+      "part": 4,
+      "name": "validation_line",
+      "source": "AI-generated, short enough for wallpaper/mug/card; fallback = shortest kept style bank line matching tone"
+    }
+  ],
+  "few_shot_examples": "style_exemplars.json: 57 exemplars balanced across tones; 14 anti-examples with reasons",
+  "anti_patterns": [
+    "Too abstract: vague noun-stacking with no concrete image (e.g. \"Joy informs your transformative presence\")",
+    "Contrast constructions: \"not X but Y\" / \"isn't X, it's Y\" forms",
+    "Tacked-on aphorism endings that restate the point (user note on \"Freedom is how you breathe.\")",
+    "Em dashes and en dashes anywhere",
+    "Banned words: actually, lands, looks like"
+  ],
+  "generation_pipeline": {
+    "order": [
+      "thread",
+      "line",
+      "reading",
+      "quote"
+    ],
+    "thread": "One idea both signs feed: a shared value, image, or productive tension. The spine of everything.",
+    "line": "The purest, shortest expression of the thread. Under 8 words. Mug and wallpaper ready.",
+    "reading": "Descriptive register: 2-3 concrete sentences per sign about how the person moves through the world, 1 sentence of element coloring, then a short simple bow that names the thread. No abstract musing or poetic openers; specificity first, click at the end.",
+    "quote": "1-2 sentences on the same thread, in the exemplar voice.",
+    "section_regenerate_rule": "Regenerating one section keeps the thread locked so all parts stay connected. Only a full regenerate may find a new thread.",
+    "element_role": "Supporting voice behind the Western+animal pair. Accentuates and contextualizes, never leads.",
+    "kinship_rule": "If the combo has archetype_kinship, lean into the shared animal as the thread candidate."
+  }
+}

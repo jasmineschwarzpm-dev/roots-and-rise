@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark form controls (the date picker) to match the indigo night theme. */
+  color-scheme: dark;
+}
+
+body {
+  background: #14172b;
+  color: #f5efe2;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
