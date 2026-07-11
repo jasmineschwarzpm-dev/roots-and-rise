@@ -2,6 +2,17 @@
 
 Style LOCKED July 2026. The reference image is the Water Snake Jasmine generated in Midjourney: an emerald and gold serpent with fine gold scale linework and a soft gold moon, on a deep solid indigo night. Every other animal matches this. The old cream rice-paper direction is retired.
 
+## Status (updated July 11, 2026)
+
+Chosen finals live in `art-finals/`, one clean-named file per animal. The set shares a moon-gazing motif; protect it when generating the remaining animals.
+
+| Animal | Status |
+|---|---|
+| Rat, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, Pig | DONE, final chosen in art-finals/ |
+| Ox, Tiger, Rabbit | NOT YET GENERATED, prompts below are ready |
+
+Selection notes: pig final is the moon-gazing pig (the boar variant kept as promo art only, wrong archetype for the locked Pig traits; the smiling pig variant reads too storybook next to the set). Rooster final is the clean-sky version (the rocky-outcrop variant kept as promo art, too busy for the constellation layer). Monkey final is the vertical reaching pose.
+
 ## The look
 
 - Deep solid indigo night ground (roughly #262a55)
