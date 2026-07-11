@@ -1,178 +1,140 @@
 # Keepsake Card Art Direction
 
-Direction chosen by Jasmine, July 2026: ink-wash zodiac animals fused with an ethereal Western celestial layer, generated with an AI image tool, curated by hand.
+Style LOCKED July 2026. The reference image is the Water Snake Jasmine generated in Midjourney: an emerald and gold serpent with fine gold scale linework and a soft gold moon, on a deep solid indigo night. Every other animal matches this. The old cream rice-paper direction is retired.
 
-## Refined direction (from the mood boards, July 2026)
+## The look
 
-Jasmine's Pinterest sections (art-inspiration, color-pallet, brand-mood) point to a richer world than a pale minimal one. The consistent DNA across the boards:
+- Deep solid indigo night ground (roughly #262a55)
+- Emerald and teal ink and watercolor washes for the animal
+- Luminous gold: gold leaf, fine gold linework, a soft gold moon, wisps of gold cloud
+- A faint scattering of gold stars, elegant and atmospheric
+- Generous open sky, so the code constellation has room to live
 
-- Deep jewel grounds: indigo night, emerald, teal, ink black
-- Luminous gold: gold leaf, fine gold linework, gold clouds, gold stars
-- Celestial: moons (crescent, full, and a recurring red sun), scattered stars, literal constellations, nebula-like clouds
-- Flowing water and cloud forms: koi, waves, serpentine bodies that move like ink in water
-- Ink and watercolor brushwork, elegant and atmospheric, with generous negative space
+## The concept: two skies, one card
 
-This is warmer and darker than the cream rice-paper minimalism in the reference build. Two consequences to decide before generating all twelve:
+Each card is the person's Chinese zodiac animal, painted, on a night sky. In code we draw their real Western constellation in gold in the open part of that sky. The animal carries the Chinese tradition, the constellation carries the Western one. Both are present, neither is a footnote.
 
-1. Card ground. The rich gold-and-teal animals sit best on a dark indigo night card, which also matches the app's own night-sky shell. Options: move the keepsake card to a dark ground (recommended, matches the boards), or keep the cream card and use the lighter warm-paper animal style. Mock both before deciding.
-2. Element. If the animals are richly colored, we cannot tint the animal itself by element. Better plan: keep twelve fixed animal paintings and let code tint the night ground, moon glow, and constellation by element (Water indigo, Wood deep teal-green, Fire ember, Earth ochre-bronze, Metal cool silver-grey). Element then colors the whole sky around the animal. Still twelve images, all sixty combinations, and it fits the dark-ground look.
+This is what lets twelve paintings serve everyone. The animal is one of twelve; the Western constellation is drawn in code, so any animal pairs with any of the twelve signs without new art. Do not paint a specific Western constellation into the image; leave that to code.
 
-### Refined snake prompts (test both, pick the world)
+## How the element works
 
-Luminous dark (matches the boards):
+The element is not painted into the animal. Twelve fixed animal paintings stay constant, and code tints the night around them by element: Water keeps the deep indigo, Wood a deep teal-green, Fire a warm ember, Earth a bronze, Metal a cool silver-grey. The element colors the whole sky; the animal stays the same. Twelve images, all sixty element and animal pairings.
 
-```
-Chinese ink and watercolor painting of a graceful snake, its coiling body flowing like liquid ink and water, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep indigo night ground, a soft glowing moon and a faint scattering of gold stars, wisps of stylized gold cloud, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, text, watermark, border, frame, harsh outlines
-```
+The Water Snake needs no tint at all, since indigo already reads as Water. A happy accident.
 
-Warm paper (matches the current cream card):
+## Card ground: dark night (decided)
 
-```
-Sumi-e ink painting of a graceful snake in flowing confident brushstrokes, black ink with soft grey washes and a touch of teal, delicate gold leaf accents, on warm cream rice paper, a pale gold moon and a faint scattering of tiny gold stars, generous negative space, elegant, dreamlike, atmospheric --ar 3:4 --stylize 250 --no photorealism, neon, text, watermark, border, frame
-```
+The keepsake card is a dark indigo night, not cream. The rich gold-and-emerald animals glow on it, and it matches the app's own night-sky shell. The cream direction is retired.
 
-Keep painted stars faint in either version, so the real Western constellation drawn in code stays readable on top. Once the snake style is chosen, regenerate the other eleven animals in that exact style using a style reference, then update the twelve prompts below to match.
+## Technical specs for each generated image
 
-## The concept
-
-Each card background is a Chinese ink-wash painting of the person's zodiac animal on rice paper, with a faint Western sky woven around it: tiny gold stars, thin constellation lines, soft moon glow. The animal carries the Chinese tradition, the star layer carries the Western one. Two skies, one story, in a single image.
-
-One rule that makes this work with 12 images instead of 144: **the celestial layer stays generic.** No specific Western zodiac constellation or glyph in the art, because any animal can pair with any Western sign. The person's Western sign already appears in the card header text.
-
-The element does not need to be in the artwork either. The app tints each image by element in code (Wood green, Fire vermillion, Earth ochre, Metal silver grey, Water blue grey), so 12 neutral ink images cover all 60 element and animal pairings.
-
-## Why this style
-
-- The card lays a cream veil at about 80% opacity over the art so the reading stays legible. Ink work survives that veil because it is made of shape, not color detail.
-- The rice-paper ground matches the card's existing cream gradient, so the art looks native, never pasted on.
-- Ink plus the cinnabar seal is already the app's visual signature.
-
-## Technical specs for generated images
-
-- Portrait orientation, 3:4 ratio, at least 1200 x 1600 pixels
-- Background: warm cream rice paper, close to #F5EFE2
-- Palette: black and grey ink washes, small gold star accents, at most one muted warm accent color
-- Composition: animal roughly centered, generous empty margins on all sides (text sits on top of everything)
+- Portrait orientation, 3:4 ratio preferred (the square framing of the reference snake also works, since the card crops to portrait)
+- Highest resolution the tool offers; upscale before saving
+- Background: deep solid indigo night, roughly #262a55, even and uncluttered
+- Palette: emerald and teal washes, luminous gold leaf and fine gold linework, a soft gold moon; keep to this jewel-and-gold family so all twelve read as one set
+- Composition: the animal to one side or lower, the moon in the upper sky, and at least one region of open indigo kept clear so the code constellation is readable
 - No text, no watermarks, no borders, no signature in the image
 
-## Base prompt (reuse for every animal, swap only the bracketed part)
+## The locked base prompt (swap only the bracketed part)
 
-> Minimal Chinese ink wash painting of [animal description], loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette, no text
+> Chinese ink and watercolor painting of [animal description], deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 
-Suggested negative prompt where the tool supports one:
+## Midjourney workflow, with the snake as the anchor
 
-> photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+The snake is your style reference. It is what keeps the other eleven looking like the same artist made them.
 
-## The twelve animal descriptions
+1. On midjourney.com, drag your saved Water Snake image into the prompt bar and mark it as a style reference. (Or upload it, copy its image URL, and add `--sref THAT_URL` to the end of each prompt below.)
+2. Paste ONE animal line per generation. Nothing else from this document goes into Midjourney.
+3. Generate several candidates per animal and keep the best. Curation is the real work.
+4. Save each keeper at full resolution.
 
-| Animal | Bracketed description |
-|---|---|
-| Rat | a clever alert rat, poised mid-step, tail in one fluid stroke |
-| Ox | a calm powerful ox standing firm, head slightly lowered |
-| Tiger | a bold tiger mid-stride, stripes in confident single strokes |
-| Rabbit | a gentle rabbit sitting quietly, ears attentive, soft washes |
-| Dragon | a sinuous dragon curling through mist, whiskers trailing |
-| Snake | a graceful snake in one continuous elegant curve |
-| Horse | a spirited horse in motion, mane flying in loose strokes |
-| Goat | a serene goat resting, horns in a calm curved line |
-| Monkey | a playful monkey reaching upward, caught mid-swing |
-| Rooster | a proud rooster standing tall, tail feathers in bold strokes |
-| Dog | a loyal dog seated and watchful, ears up |
-| Pig | a content joyful pig, round and soft, gentle expression |
-
-## Consistency tips
-
-- Generate all twelve in one sitting with the same tool and the same model version.
-- Keep the prompt identical except for the animal description.
-- If the tool supports a seed number or a style reference image, lock it after the first image you love and reuse it for the rest.
-- Expect to generate several candidates per animal and keep the best. Curation is the real work.
-
-## Midjourney workflow (chosen platform, July 2026)
-
-Paste ONE line below per generation. Nothing else from this document goes into Midjourney. The `--ar 3:4` at the end sets the portrait shape and the `--no` list replaces the negative prompt.
-
-Suggested order: start with the Snake. It is the simplest shape, so it is the fastest way to find the style. Generate until one Snake feels exactly right, then use that image as a style reference for the other eleven: on midjourney.com, click your favorite image and choose the style reference option (or drag the image into the prompt bar's style slot), then run the remaining prompts. That is what keeps all twelve looking like one artist.
-
-If results feel too stiff or literal, add `--stylize 250` to the end of the prompt.
+If an animal comes out too busy, add the word `simple` near the front. If the sky fills with too many painted stars and leaves no open space, change `a faint scattering of gold stars` to `a few faint gold stars`.
 
 ### Ready-to-paste prompts
 
 Rat:
 
 ```
-Minimal Chinese ink wash painting of a clever alert rat, poised mid-step, tail in one fluid stroke, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a clever alert rat, poised mid-step, tail curling in one fluid gold-lined stroke, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
 Ox:
 
 ```
-Minimal Chinese ink wash painting of a calm powerful ox standing firm, head slightly lowered, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a calm powerful ox standing firm, head lowered, painted in flowing emerald ink washes, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
 Tiger:
 
 ```
-Minimal Chinese ink wash painting of a bold tiger mid-stride, stripes in confident single strokes, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a bold tiger mid-stride, stripes in confident gold-lined strokes, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
 Rabbit:
 
 ```
-Minimal Chinese ink wash painting of a gentle rabbit sitting quietly, ears attentive, soft washes, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a gentle rabbit sitting quietly, ears attentive, soft flowing washes, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
 Dragon:
 
 ```
-Minimal Chinese ink wash painting of a sinuous dragon curling through mist, whiskers trailing, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a sinuous dragon curling through cloud, whiskers trailing, its body flowing like liquid ink and water, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
-Snake (start here):
+Snake (your reference, already done):
 
 ```
-Minimal Chinese ink wash painting of a graceful snake in one continuous elegant curve, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a graceful snake coiling in an elegant curve, its body flowing like liquid ink and water, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
 Horse:
 
 ```
-Minimal Chinese ink wash painting of a spirited horse in motion, mane flying in loose strokes, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a spirited horse in mid-gallop, mane and tail flowing in loose gold-lined strokes, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
 Goat:
 
 ```
-Minimal Chinese ink wash painting of a serene goat resting, horns in a calm curved line, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a serene goat at rest, horns curving in a calm gold-lined line, soft flowing washes, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
 Monkey:
 
 ```
-Minimal Chinese ink wash painting of a playful monkey reaching upward, caught mid-swing, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a playful monkey reaching upward mid-swing, tail curling in a fluid stroke, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
 Rooster:
 
 ```
-Minimal Chinese ink wash painting of a proud rooster standing tall, tail feathers in bold strokes, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a proud rooster standing tall, tail feathers sweeping in bold gold-lined strokes, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
 Dog:
 
 ```
-Minimal Chinese ink wash painting of a loyal dog seated and watchful, ears up, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a loyal dog seated and watchful, ears up, painted in flowing emerald ink washes, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
 
 Pig:
 
 ```
-Minimal Chinese ink wash painting of a content joyful pig, round and soft, gentle expression, loose confident sumi brush strokes, black ink with soft grey washes on warm cream rice paper, generous negative space, a faint scattering of tiny gold stars and thin delicate constellation lines woven around the figure, soft ethereal glow, dreamlike, elegant, subtle paper texture, muted palette --ar 3:4 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background
+Chinese ink and watercolor painting of a content rounded pig, gentle and soft, painted in flowing emerald ink washes, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep solid indigo night ground, a soft glowing gold moon and wisps of stylized gold cloud, a faint scattering of gold stars, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, saturated colors, text, watermark, border, frame, busy background, harsh outlines
 ```
+
+## Consistency tips
+
+- Use the snake as the style reference for all eleven, in one sitting, same model version.
+- Keep the prompt identical except for the animal phrase.
+- Expect several candidates per animal. Keep the one whose pose and gold work best.
+- Favor images with a calm, open patch of night, since that is where the constellation goes.
 
 ## Usage rights
 
-Use a paid plan on whichever tool you choose and read its commercial terms before generating, since mugs and cards may be sold later. Keep screenshots or receipts of your generations. Do not use images from the Pinterest board itself; those belong to other artists.
+You are on a paid Midjourney plan, which grants commercial rights while your business grosses under one million dollars a year, and rights vest when you create the image, so they survive cancelling. Keep your receipt. Do not use images from the Pinterest board itself; those belong to other artists.
 
 ## Handoff
 
-When you have candidates you love, send them to Claude Code (a folder path or dropped into chat works). Next steps from there: add them to the app, wire up the element tinting, and preview the full card on your phone before anything ships.
+When you have animals you love, drop them in the project folder or into chat. Next steps from there: place each animal in the app, draw the twelve real Western constellations from star data, wire the element tinting of the night, and preview the full card on your phone before anything ships. The reference snake already lives at the project root, and a card preview is saved in previews/keepsake-virgo-water-snake.png.
