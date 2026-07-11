@@ -2,6 +2,37 @@
 
 Direction chosen by Jasmine, July 2026: ink-wash zodiac animals fused with an ethereal Western celestial layer, generated with an AI image tool, curated by hand.
 
+## Refined direction (from the mood boards, July 2026)
+
+Jasmine's Pinterest sections (art-inspiration, color-pallet, brand-mood) point to a richer world than a pale minimal one. The consistent DNA across the boards:
+
+- Deep jewel grounds: indigo night, emerald, teal, ink black
+- Luminous gold: gold leaf, fine gold linework, gold clouds, gold stars
+- Celestial: moons (crescent, full, and a recurring red sun), scattered stars, literal constellations, nebula-like clouds
+- Flowing water and cloud forms: koi, waves, serpentine bodies that move like ink in water
+- Ink and watercolor brushwork, elegant and atmospheric, with generous negative space
+
+This is warmer and darker than the cream rice-paper minimalism in the reference build. Two consequences to decide before generating all twelve:
+
+1. Card ground. The rich gold-and-teal animals sit best on a dark indigo night card, which also matches the app's own night-sky shell. Options: move the keepsake card to a dark ground (recommended, matches the boards), or keep the cream card and use the lighter warm-paper animal style. Mock both before deciding.
+2. Element. If the animals are richly colored, we cannot tint the animal itself by element. Better plan: keep twelve fixed animal paintings and let code tint the night ground, moon glow, and constellation by element (Water indigo, Wood deep teal-green, Fire ember, Earth ochre-bronze, Metal cool silver-grey). Element then colors the whole sky around the animal. Still twelve images, all sixty combinations, and it fits the dark-ground look.
+
+### Refined snake prompts (test both, pick the world)
+
+Luminous dark (matches the boards):
+
+```
+Chinese ink and watercolor painting of a graceful snake, its coiling body flowing like liquid ink and water, deep emerald and teal washes with luminous gold leaf accents and fine gold linework, on a deep indigo night ground, a soft glowing moon and a faint scattering of gold stars, wisps of stylized gold cloud, elegant negative space, atmospheric, dreamlike, refined brushwork --ar 3:4 --stylize 300 --no photorealism, neon, text, watermark, border, frame, harsh outlines
+```
+
+Warm paper (matches the current cream card):
+
+```
+Sumi-e ink painting of a graceful snake in flowing confident brushstrokes, black ink with soft grey washes and a touch of teal, delicate gold leaf accents, on warm cream rice paper, a pale gold moon and a faint scattering of tiny gold stars, generous negative space, elegant, dreamlike, atmospheric --ar 3:4 --stylize 250 --no photorealism, neon, text, watermark, border, frame
+```
+
+Keep painted stars faint in either version, so the real Western constellation drawn in code stays readable on top. Once the snake style is chosen, regenerate the other eleven animals in that exact style using a style reference, then update the twelve prompts below to match.
+
 ## The concept
 
 Each card background is a Chinese ink-wash painting of the person's zodiac animal on rice paper, with a faint Western sky woven around it: tiny gold stars, thin constellation lines, soft moon glow. The animal carries the Chinese tradition, the star layer carries the Western one. Two skies, one story, in a single image.
