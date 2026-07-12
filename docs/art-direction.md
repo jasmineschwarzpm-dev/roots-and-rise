@@ -8,10 +8,9 @@ Chosen finals live in `art-finals/`, one clean-named file per animal. The set sh
 
 | Animal | Status |
 |---|---|
-| Rat, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, Pig | DONE, final chosen in art-finals/ |
-| Ox, Tiger, Rabbit | NOT YET GENERATED, prompts below are ready |
+| All twelve | DONE, finals in art-finals/, wired into the app |
 
-Selection notes: pig final is the moon-gazing pig (the boar variant kept as promo art only, wrong archetype for the locked Pig traits; the smiling pig variant reads too storybook next to the set). Rooster final is the clean-sky version (the rocky-outcrop variant kept as promo art, too busy for the constellation layer). Monkey final is the vertical reaching pose.
+Selection notes: pig final is the moon-gazing pig (the boar variant kept as promo art only, wrong archetype for the locked Pig traits; the smiling pig variant reads too storybook next to the set). Rooster final is the clean-sky version (the rocky-outcrop variant kept as promo art, too busy for the constellation layer). Monkey final is the vertical reaching pose. Rabbit final is the moon-gazing pose (the front-facing variant kept as alternate). Rat final is the original moon-gazing crouch (the alert standing variant kept as alternate).
 
 ## The look
 

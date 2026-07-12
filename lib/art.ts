@@ -18,8 +18,6 @@ export type ArtEntry = {
   anchor: ConstellationAnchor;
 };
 
-const DEFAULT_ANCHOR: ConstellationAnchor = { x: 32, y: 12, w: 36 };
-
 export const ANIMAL_ART: Record<string, ArtEntry> = {
   Rat: {
     file: "/animals/rat.webp",
@@ -27,19 +25,19 @@ export const ANIMAL_ART: Record<string, ArtEntry> = {
     anchor: { x: 63, y: 30, w: 26 },
   },
   Ox: {
-    file: null,
-    alt: "A deep indigo night sky with a glowing gold moon",
-    anchor: DEFAULT_ANCHOR,
+    file: "/animals/ox.webp",
+    alt: "Ink and watercolor painting of a powerful emerald ox with gold lined horns beneath a gold moon",
+    anchor: { x: 7, y: 30, w: 24 },
   },
   Tiger: {
-    file: null,
-    alt: "A deep indigo night sky with a glowing gold moon",
-    anchor: DEFAULT_ANCHOR,
+    file: "/animals/tiger.webp",
+    alt: "Ink and watercolor painting of an emerald tiger with gold stripes prowling beneath a gold moon",
+    anchor: { x: 68, y: 10, w: 24 },
   },
   Rabbit: {
-    file: null,
-    alt: "A deep indigo night sky with a glowing gold moon",
-    anchor: DEFAULT_ANCHOR,
+    file: "/animals/rabbit.webp",
+    alt: "Ink and watercolor painting of an emerald rabbit gazing up at a gold moon",
+    anchor: { x: 8, y: 28, w: 26 },
   },
   Dragon: {
     file: "/animals/dragon.webp",
