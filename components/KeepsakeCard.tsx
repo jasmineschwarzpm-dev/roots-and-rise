@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import type { Signs } from "@/lib/signs";
 import type { Reading, ReadingPart } from "@/lib/reading";
 import { ANIMAL_ART, ELEMENT_TINT } from "@/lib/art";
@@ -137,6 +137,23 @@ function FallbackSky() {
   );
 }
 
+/**
+ * The painting when it loads, the code-drawn night sky when it cannot.
+ * Rendered with key={file} so a failed state resets when the animal changes.
+ */
+function ArtOrSky({ file, alt }: { file: string; alt: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return <FallbackSky />;
+  return (
+    <img
+      src={file}
+      alt={alt}
+      className="absolute inset-0 w-full h-full object-cover"
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
 export function KeepsakeCard({
   signs,
   animalSymbol,
@@ -160,11 +177,7 @@ export function KeepsakeCard({
       {/* Night sky hero: the painting, the element tint, the real constellation. */}
       <div className="relative w-full" style={{ aspectRatio: "1" }}>
         {art?.file ? (
-          <img
-            src={art.file}
-            alt={art.alt}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <ArtOrSky key={art.file} file={art.file} alt={art.alt} />
         ) : (
           <FallbackSky />
         )}
