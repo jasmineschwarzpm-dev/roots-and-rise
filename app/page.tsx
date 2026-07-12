@@ -14,6 +14,8 @@ import {
 } from "@/lib/content";
 import { fallbackReading } from "@/lib/fallback";
 import type { Reading, ReadingPart } from "@/lib/reading";
+import { KeepsakeCard } from "@/components/KeepsakeCard";
+import { Seal } from "@/components/Seal";
 
 const DISPLAY = "var(--font-fraunces), Georgia, serif";
 
@@ -21,7 +23,6 @@ const DISPLAY = "var(--font-fraunces), Georgia, serif";
 const INK = "#14172B";
 const PAPER = "#F5EFE2";
 const GOLD = "#D9A441";
-const CINNABAR = "#B03A2E";
 const MIST = "#8B90AD";
 const SOFT = "#C7CADF";
 const JADE = "#9FCDBB";
@@ -55,25 +56,6 @@ async function requestReading(
     // Network failure before the server could answer: compose offline here too.
     return fallbackReading(s.western, s.animal, s.element, tone, n, lockedThread);
   }
-}
-
-function Seal({ hanzi, size = 56 }: { hanzi: string; size?: number }) {
-  return (
-    <div
-      className="flex items-center justify-center shrink-0"
-      style={{
-        width: size,
-        height: size,
-        background: CINNABAR,
-        borderRadius: 8,
-        boxShadow: "0 2px 10px rgba(176,58,46,.45)",
-      }}
-    >
-      <span style={{ color: PAPER, fontSize: size * 0.55, lineHeight: 1, fontWeight: 700 }}>
-        {hanzi}
-      </span>
-    </div>
-  );
 }
 
 function Accordion({ title, items }: { title: string; items: SignCard[] }) {
@@ -316,19 +298,11 @@ export default function RootsAndRise() {
               {"←"} back to start
             </button>
 
-            <div className="flex items-center gap-4">
-              <Seal hanzi={a.symbol} />
-              <div>
-                <div style={{ fontFamily: DISPLAY, color: PAPER, fontSize: 24, fontWeight: 600 }}>
-                  {w.symbol} {signs.western} {"·"} {signs.element} {signs.animal}
-                </div>
-                {signs.edgeNote && (
-                  <div className="text-xs mt-1" style={{ color: JADE }}>
-                    {signs.edgeNote}
-                  </div>
-                )}
-              </div>
-            </div>
+            {signs.edgeNote && (
+              <p className="text-xs" style={{ color: JADE }}>
+                {signs.edgeNote}
+              </p>
+            )}
 
             <div className="grid gap-3 sm:grid-cols-3">
               {[
@@ -378,92 +352,19 @@ export default function RootsAndRise() {
               </div>
             </div>
 
-            {/* Keepsake card: the background-image slot lives on this wrapper for a later art phase. */}
-            <div
-              className="relative rounded-2xl overflow-hidden"
-              data-bg-slot="reading-card"
-              style={{ backgroundImage: "linear-gradient(160deg, #F5EFE2 0%, #EFE6D2 60%, #E9DCC2 100%)" }}
-            >
-              {/* Legibility veil: keeps text readable over any future background art. */}
-              <div className="absolute inset-0" style={{ background: "rgba(245,239,226,.82)" }} />
-              <div
-                className="relative p-6 sm:p-8"
-                style={{ border: "1px solid rgba(176,58,46,.35)", margin: 8, borderRadius: 12 }}
-              >
-                {busy && !reading ? (
-                  <p className="text-sm" style={{ color: "#6B6250" }}>
-                    Reading both skies{"…"}
-                  </p>
-                ) : reading ? (
-                  <div className="space-y-6">
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs uppercase tracking-widest" style={{ color: CINNABAR }}>
-                          Your reading
-                        </span>
-                        <RegenBtn
-                          onClick={() => void generate(reading.thread, "reading")}
-                          busy={busyPart === "reading"}
-                          label={"↻ reword"}
-                        />
-                      </div>
-                      <p className="leading-relaxed" style={{ color: "#3A3428", fontSize: 16 }}>
-                        {reading.reading}
-                      </p>
-                    </div>
-
-                    <div style={{ borderTop: "1px dashed rgba(176,58,46,.3)" }} className="pt-5">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs uppercase tracking-widest" style={{ color: CINNABAR }}>
-                          Your quote
-                        </span>
-                        <RegenBtn
-                          onClick={() => void generate(reading.thread, "quote")}
-                          busy={busyPart === "quote"}
-                          label={"↻ reword"}
-                        />
-                      </div>
-                      <p style={{ fontFamily: DISPLAY, color: "#3A3428", fontSize: 19, fontStyle: "italic" }}>
-                        {"“"}
-                        {reading.quote}
-                        {"”"}
-                      </p>
-                    </div>
-
-                    <div style={{ borderTop: "1px dashed rgba(176,58,46,.3)" }} className="pt-5">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs uppercase tracking-widest" style={{ color: CINNABAR }}>
-                          Your line
-                        </span>
-                        <div className="flex gap-2">
-                          <RegenBtn
-                            onClick={() => void generate(reading.thread, "line")}
-                            busy={busyPart === "line"}
-                            label={"↻ reword"}
-                          />
-                          <RegenBtn onClick={copyLine} busy={false} label={copied ? "copied!" : "copy"} />
-                        </div>
-                      </div>
-                      <p style={{ fontFamily: DISPLAY, color: CINNABAR, fontSize: 26, fontWeight: 700, lineHeight: 1.15 }}>
-                        {reading.line}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center justify-between pt-1">
-                      <span className="text-xs" style={{ color: "#8A8069" }}>
-                        thread: {reading.thread}
-                        {reading.source === "offline" ? " · offline wording, tap any reword to retry" : ""}
-                      </span>
-                      <Seal hanzi={a.symbol} size={34} />
-                    </div>
-                  </div>
-                ) : (
-                  <p className="text-sm" style={{ color: "#6B6250" }}>
-                    Something interrupted the reading. Try again.
-                  </p>
-                )}
-              </div>
-            </div>
+            <KeepsakeCard
+              signs={signs}
+              animalSymbol={a.symbol}
+              westernSymbol={w.symbol}
+              reading={reading}
+              busy={busy}
+              busyPart={busyPart}
+              copied={copied}
+              onReword={(part) => {
+                if (reading) void generate(reading.thread, part);
+              }}
+              onCopyLine={copyLine}
+            />
 
             <p className="text-xs text-center" style={{ color: MIST }}>
               Reword keeps your thread; new thread starts fresh. For fun, reflection, and the occasional mug.
