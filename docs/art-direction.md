@@ -2,6 +2,18 @@
 
 Style LOCKED July 2026. The reference image is the Water Snake Jasmine generated in Midjourney: an emerald and gold serpent with fine gold scale linework and a soft gold moon, on a deep solid indigo night. Every other animal matches this. The old cream rice-paper direction is retired.
 
+## Celestial-base direction (LOCKED July 13, 2026, supersedes the pasted-overlay approach)
+
+The gold-on-dark and "animal over a finished sky" cards read as two images stacked. The fix, proven on the Virgo Metal Snake (see previews/keepsake-celestial-virgo-snake.png):
+
+- Generate a PAINTED ink-celestial base: the animal dissolving into drifting mist, a scattered starfield, and ink-spatter stardust, all one woven composition (xieyi freehand). The sky is painted, not added later.
+- Generate it NEUTRAL GREY. Grey is the tintable neutral (it already reads as Metal). Code then tints the sky to the element: grey stays Metal, indigo for Water, green for Wood, ember for Fire, bronze for Earth. Twelve grey bases cover all sixty pairings, same economy as before.
+- The real Western constellation is still drawn by code, but as SOFT GLOWING stars set among the painted star specks, joined by a faint luminous thread, so it blends into the painted sky instead of floating on blank paper. This is what finally reads as woven.
+- Card layout for this style is the light "mounted print": full painting, then the reading as a caption below on the paper, never text over the art. (The jewel style overlaid; this one mounts.)
+- Element can also be read in the sky mood, which matches the jewel cards conceptually.
+
+Generation tool going forward: Nano Banana (Gemini image, free in the Google ecosystem), since Midjourney credits are spent. Regenerate the twelve animals as neutral grey celestial bases there when ready. This is Phase 3 work; the eight-day version 2 (reading lenses, chooser, story and history) needs no new art.
+
 ## Status (updated July 11, 2026)
 
 Chosen finals live in `art-finals/`, one clean-named file per animal. The set shares a moon-gazing motif; protect it when generating the remaining animals.
