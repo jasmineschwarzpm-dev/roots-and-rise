@@ -6,11 +6,11 @@ Draft v0.1, July 2026. This is the site-facing version of why Roots & Rise exist
 
 ## Why two skies
 
-I was born into two families who came from opposite ends of the earth, and I spent my whole life standing between them. One side reads the stars the Western way: the month you were born, your sun sign. The other reads the year, the animal, the element, the way my father's people have for centuries. Each sky told me who I was, and each told me something a little different, and for a long time I felt like I fully belonged to neither.
+I grew up mixed, between two immigrant families from opposite ends of the earth, and for a long time I believed I had to pick one to belong to. One of my skies is my father's, the Chinese zodiac, the year you were born, your animal, your element. The other sky is the Western one, the month and the sun sign, the version the rest of the world talked about around me. Two ways of asking the same question, who are you and what are you made of. I was never only one answer.
 
-So I stopped choosing between them. I carry fire in my chest and deep water underneath, and both of those are true at the same time. The contradiction was never a flaw in me. It turned out to be the most honest thing about me.
+For years I wished I were simpler. What I really needed was someone who honored every part of where they came from, so that carrying all of it at once could have felt like something to be proud of.
 
-Roots & Rise is the bridge I wish I had been handed as a kid. It reads both of your skies and holds them in one hand, on purpose, out loud. Two traditions, each honestly its own, both completely yours. Whether you carry one heritage or five, you deserve to see your whole self written in the sky, not half of it.
+Roots & Rise is me building that person for whoever needs one now. It reads both of your skies and holds them together, on purpose, out loud. Two traditions, each fully its own, both fully yours. Whether you carry one heritage or five, your whole self deserves to be seen in the sky.
 
 Enter the day you were born, and let me show you both.
 
