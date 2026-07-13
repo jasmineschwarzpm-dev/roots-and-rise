@@ -10,7 +10,7 @@ I grew up mixed, between two immigrant families from opposite ends of the earth,
 
 For years I wished I were simpler. What I really needed was someone who honored every part of where they came from, so that carrying all of it at once could have felt like something to be proud of.
 
-Roots & Rise is me building that person for whoever needs one now. It reads both of your skies and holds them together, on purpose, out loud. Two traditions, each fully its own, both fully yours. Whether you carry one heritage or five, your whole self deserves to be seen in the sky.
+Roots & Rise is me creating that space for everyone who needs it now. It reads both of your skies and holds them together, on purpose, out loud. Two traditions, each fully its own, both fully yours. Whether you carry one heritage or five, your whole self deserves to be seen in the sky.
 
 Enter the day you were born, and let me show you both.
 
