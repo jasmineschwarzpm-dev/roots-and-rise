@@ -28,9 +28,49 @@ describe("findViolations", () => {
     expect(findViolations("It isn't noise, it's music.")).not.toEqual([]);
   });
 
+  // These are real sentences the generator produced through the Vinegar Taster
+  // lenses. The contracted-only detector let every one of them through.
+  it("detects the full-word negation restated as an affirmation", () => {
+    expect(findViolations("Joy is not soft, it is unstoppable.")).not.toEqual([]);
+    expect(
+      findViolations("Your softness is not weakness, it is a strength that does not need to prove itself."),
+    ).not.toEqual([]);
+    expect(findViolations("Your fire and your gentleness are not opposites, just one strength.")).not.toEqual(
+      [],
+    );
+    expect(findViolations("This was not a detour, it was the road.")).not.toEqual([]);
+  });
+
+  it("detects the same flip hiding behind other negations", () => {
+    expect(findViolations("Watch how it settles: it does not vanish, it softens into resolve.")).not.toEqual(
+      [],
+    );
+    expect(findViolations("That first spark is never a mistake, just your nature announcing itself.")).not.toEqual(
+      [],
+    );
+    expect(findViolations("You don't wait for permission, you move.")).not.toEqual([]);
+  });
+
+  it("detects the flip written backwards, affirm then negate", () => {
+    expect(findViolations("Sincerity is a discipline, not a default.")).not.toEqual([]);
+    expect(findViolations("Joy that acts, not joy that waits for permission.")).not.toEqual([]);
+    expect(findViolations("You deserve your whole self, not half of it.")).not.toEqual([]);
+  });
+
+  it("spares participles and causal clauses that only look like the flip", () => {
+    expect(findViolations("He left the door open, not knowing you would follow.")).toEqual([]);
+    expect(findViolations("You move, not because you must.")).toEqual([]);
+  });
+
   it("does not flag ordinary uses of 'but' or 'cannot'", () => {
     expect(findViolations("You move quietly, but everyone notices.")).toEqual([]);
     expect(findViolations("They cannot help smiling around you.")).toEqual([]);
+  });
+
+  it("does not flag a negation that is never restated", () => {
+    expect(findViolations("It is not easy, and it is worth every hour.")).toEqual([]);
+    expect(findViolations("You are not waiting for permission.")).toEqual([]);
+    expect(findViolations("Some days are not kind. You keep going.")).toEqual([]);
   });
 });
 

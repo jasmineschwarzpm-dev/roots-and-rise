@@ -1,4 +1,4 @@
-import type { Tone } from "./content";
+import type { Lens } from "./content";
 
 /** The four generated pieces plus where they came from. */
 export type Reading = {
@@ -22,7 +22,7 @@ export type GenerateRequest = {
   western: string;
   animal: string;
   element: string;
-  tone: Tone;
+  lens: Lens;
   /** When present, regenerate only `onlyPart` and keep this exact thread. */
   lockedThread?: string | null;
   onlyPart?: ReadingPart | null;

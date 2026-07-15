@@ -6,11 +6,12 @@ import {
   WESTERN_SIGNS,
   ANIMALS,
   ELEMENTS,
+  LENSES,
   westernCard,
   animalCard,
   elementCard,
   type SignCard,
-  type Tone,
+  type Lens,
 } from "@/lib/content";
 import { fallbackReading } from "@/lib/fallback";
 import type { Reading, ReadingPart } from "@/lib/reading";
@@ -26,12 +27,13 @@ const GOLD = "#D9A441";
 const MIST = "#8B90AD";
 const SOFT = "#C7CADF";
 const JADE = "#9FCDBB";
+const EMERALD = "#3E8E7E";
 
 type ReadingResult = Reading & { limited?: boolean };
 
 async function requestReading(
   s: Signs,
-  tone: Tone,
+  lens: Lens,
   n: number,
   lockedThread: string | null,
   onlyPart: ReadingPart | null,
@@ -44,7 +46,7 @@ async function requestReading(
         western: s.western,
         animal: s.animal,
         element: s.element,
-        tone,
+        lens,
         nonce: n,
         lockedThread,
         onlyPart,
@@ -54,7 +56,7 @@ async function requestReading(
     return (await res.json()) as ReadingResult;
   } catch {
     // Network failure before the server could answer: compose offline here too.
-    return fallbackReading(s.western, s.animal, s.element, tone, n, lockedThread);
+    return fallbackReading(s.western, s.animal, s.element, lens, n, lockedThread);
   }
 }
 
@@ -118,10 +120,64 @@ function RegenBtn({ onClick, busy, label }: { onClick: () => void; busy: boolean
   );
 }
 
+/** The Vinegar Tasters. Picking one writes the reading through that lens. */
+function TasterChooser({
+  selected,
+  onPick,
+  busy,
+}: {
+  selected: Lens | null;
+  onPick: (l: Lens) => void;
+  busy: boolean;
+}) {
+  return (
+    <div>
+      <div className="text-xs uppercase tracking-widest mb-1" style={{ color: GOLD }}>
+        Choose your taster
+      </div>
+      <p className="text-xs mb-3" style={{ color: MIST }}>
+        Three sages taste the same vinegar and find sour, bitter, and sweet. Pick the one that matches
+        how you want to meet yourself.
+      </p>
+      <div className="grid gap-3 sm:grid-cols-3">
+        {LENSES.map((l) => {
+          const active = selected === l.id;
+          return (
+            <button
+              key={l.id}
+              onClick={() => onPick(l.id)}
+              disabled={busy}
+              className="text-left rounded-xl p-4 transition-colors focus:outline-none focus-visible:ring-2 disabled:opacity-60"
+              style={
+                active
+                  ? { background: "rgba(62,142,126,.18)", border: `1px solid ${EMERALD}` }
+                  : { background: "rgba(245,239,226,.04)", border: "1px solid rgba(139,144,173,.25)" }
+              }
+            >
+              <div className="text-xs" style={{ color: MIST }}>
+                the {l.taste} taster
+              </div>
+              <div style={{ fontFamily: DISPLAY, color: active ? JADE : PAPER, fontSize: 20, fontWeight: 600 }}>
+                {l.philosopher}
+              </div>
+              <div className="text-xs mt-1 mb-2" style={{ color: GOLD }}>
+                {l.tagline}
+              </div>
+              <div className="text-xs leading-relaxed" style={{ color: SOFT }}>
+                {l.chooserBlurb}
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function RootsAndRise() {
   const [view, setView] = useState<"home" | "reading">("home");
   const [dob, setDob] = useState("");
-  const [tone, setTone] = useState<Tone>("mixed");
+  const [lens, setLens] = useState<Lens | null>(null);
   const [signs, setSigns] = useState<Signs | null>(null);
   const [reading, setReading] = useState<ReadingResult | null>(null);
   const [busy, setBusy] = useState(false);
@@ -141,25 +197,38 @@ export default function RootsAndRise() {
     [],
   );
 
-  async function generateFor(s: Signs) {
-    setBusy(true);
-    const n = nonce + 1;
-    setNonce(n);
-    const r = await requestReading(s, tone, n, null, null);
-    setReading(r);
-    setBusy(false);
-  }
-
-  async function generate(lockedThread: string | null, onlyPart: ReadingPart | null) {
-    if (!signs) return;
+  async function runReading(
+    s: Signs,
+    l: Lens,
+    lockedThread: string | null,
+    onlyPart: ReadingPart | null,
+  ) {
     if (onlyPart) setBusyPart(onlyPart);
     else setBusy(true);
     const n = nonce + 1;
     setNonce(n);
-    const r = await requestReading(signs, tone, n, lockedThread, onlyPart);
+    const r = await requestReading(s, l, n, lockedThread, onlyPart);
     setReading((prev) => (onlyPart && prev ? { ...prev, [onlyPart]: r[onlyPart] } : r));
     setBusy(false);
     setBusyPart(null);
+  }
+
+  function chooseTaster(l: Lens) {
+    if (!signs) return;
+    setLens(l);
+    setReading(null);
+    void runReading(signs, l, null, null);
+  }
+
+  function newThread() {
+    if (!signs || !lens) return;
+    setReading(null);
+    void runReading(signs, lens, null, null);
+  }
+
+  function reword(part: ReadingPart) {
+    if (!signs || !lens || !reading) return;
+    void runReading(signs, lens, reading.thread, part);
   }
 
   function onReveal() {
@@ -175,8 +244,8 @@ export default function RootsAndRise() {
     }
     setSigns(s);
     setReading(null);
+    setLens(null);
     setView("reading");
-    void generateFor(s);
   }
 
   function copyLine() {
@@ -239,45 +308,87 @@ export default function RootsAndRise() {
               className="rounded-2xl p-6"
               style={{ background: "rgba(245,239,226,.04)", border: "1px solid rgba(217,164,65,.25)" }}
             >
-              <p className="leading-relaxed text-sm" style={{ color: SOFT }}>
-                The Western zodiac reads the sky on the day you were born: twelve signs, one for each
-                stretch of the sun&apos;s path. The Chinese zodiac reads the year: twelve animals in a
-                repeating cycle, each colored by one of five elements that returns every sixty years. Most
-                people only ever hear one side of their story. This is both, woven together.
+              <div className="text-xs uppercase tracking-widest mb-3" style={{ color: GOLD }}>
+                Why two skies
+              </div>
+              <div className="space-y-3 text-sm leading-relaxed" style={{ color: SOFT }}>
+                <p>
+                  I grew up mixed, between two immigrant families from opposite ends of the earth, and for
+                  a long time I believed I had to pick one to belong to. One of my skies is my father&apos;s,
+                  the Chinese zodiac, the year you were born, your animal, your element. The other sky is the
+                  Western one, the month and the sun sign, the version the rest of the world talked about
+                  around me. Two ways of asking the same question, who are you and what are you made of. I was
+                  never only one answer.
+                </p>
+                <p>
+                  Roots &amp; Rise is me creating that space for everyone who needs it now. It reads both of
+                  your skies and holds them together, on purpose, out loud. Whether you carry one heritage or
+                  five, your whole self deserves to be seen in the sky.
+                </p>
+              </div>
+            </div>
+
+            <div
+              className="rounded-2xl p-6"
+              style={{ background: "rgba(245,239,226,.04)", border: "1px solid rgba(217,164,65,.25)" }}
+            >
+              <label className="block text-xs uppercase tracking-widest mb-2" style={{ color: GOLD }}>
+                Your date of birth
+              </label>
+              <div className="flex flex-wrap gap-3 items-center">
+                <input
+                  type="date"
+                  value={dob}
+                  onChange={(ev) => setDob(ev.target.value)}
+                  className="rounded-lg px-3 py-2 focus:outline-none focus-visible:ring-2"
+                  style={{
+                    background: "#1E2340",
+                    color: PAPER,
+                    border: "1px solid rgba(139,144,173,.4)",
+                    colorScheme: "dark",
+                  }}
+                />
+                <button
+                  onClick={onReveal}
+                  className="px-5 py-2 rounded-lg font-semibold focus:outline-none focus-visible:ring-2"
+                  style={{ background: GOLD, color: INK }}
+                >
+                  Reveal my reading
+                </button>
+              </div>
+              {err && (
+                <p className="mt-3 text-sm" style={{ color: "#E58A7B" }}>
+                  {err}
+                </p>
+              )}
+              <p className="mt-3 text-xs" style={{ color: MIST }}>
+                Chinese years begin at Lunar New Year, not January 1. Late January and February birthdays
+                are calculated against the real date, so your animal is always the right one.
               </p>
-              <div className="mt-6">
-                <label className="block text-xs uppercase tracking-widest mb-2" style={{ color: GOLD }}>
-                  Your date of birth
-                </label>
-                <div className="flex flex-wrap gap-3 items-center">
-                  <input
-                    type="date"
-                    value={dob}
-                    onChange={(ev) => setDob(ev.target.value)}
-                    className="rounded-lg px-3 py-2 focus:outline-none focus-visible:ring-2"
-                    style={{
-                      background: "#1E2340",
-                      color: PAPER,
-                      border: "1px solid rgba(139,144,173,.4)",
-                      colorScheme: "dark",
-                    }}
-                  />
-                  <button
-                    onClick={onReveal}
-                    className="px-5 py-2 rounded-lg font-semibold focus:outline-none focus-visible:ring-2"
-                    style={{ background: GOLD, color: INK }}
-                  >
-                    Reveal my reading
-                  </button>
-                </div>
-                {err && (
-                  <p className="mt-3 text-sm" style={{ color: "#E58A7B" }}>
-                    {err}
-                  </p>
-                )}
-                <p className="mt-3 text-xs" style={{ color: MIST }}>
-                  Chinese years begin at Lunar New Year, not January 1. Late January and February birthdays
-                  are calculated against the real date, so your animal is always the right one.
+            </div>
+
+            <div
+              className="rounded-2xl p-6"
+              style={{ background: "rgba(245,239,226,.04)", border: "1px solid rgba(139,144,173,.25)" }}
+            >
+              <div className="text-xs uppercase tracking-widest mb-3" style={{ color: GOLD }}>
+                The two skies, briefly
+              </div>
+              <div className="space-y-3 text-sm leading-relaxed" style={{ color: SOFT }}>
+                <p>
+                  <span style={{ color: JADE }}>The Western sky</span> reads the month you were born.
+                  Babylonian sky-watchers traced the sun&apos;s yearly path and split it into twelve signs,
+                  and it is your sun sign that most people mean by zodiac.
+                </p>
+                <p>
+                  <span style={{ color: JADE }}>The Eastern sky</span> reads the year. The Chinese tradition
+                  turns a sixty-year wheel of twelve animals and five elements, older in its bones than the
+                  animals themselves. It begins at Lunar New Year, which is why a late January or February
+                  birthday can belong to the year before.
+                </p>
+                <p>
+                  They are two traditions, built by different peoples, that were never meant to complete each
+                  other. And yet millions of us inherit both. This holds them in one hand.
                 </p>
               </div>
             </div>
@@ -325,49 +436,40 @@ export default function RootsAndRise() {
               ))}
             </div>
 
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs uppercase tracking-widest" style={{ color: MIST }}>
-                Feel:
-              </span>
-              {(["grounded", "rising", "mixed"] as const).map((t) => (
-                <button
-                  key={t}
-                  onClick={() => setTone(t)}
-                  className="text-xs px-3 py-1 rounded-full capitalize focus:outline-none focus-visible:ring-2"
-                  style={
-                    tone === t
-                      ? { background: GOLD, color: INK, fontWeight: 600 }
-                      : { border: "1px solid rgba(139,144,173,.5)", color: MIST }
-                  }
-                >
-                  {t === "mixed" ? "both" : t}
-                </button>
-              ))}
-              <div className="ml-auto">
-                <RegenBtn
-                  onClick={() => void generate(null, null)}
-                  busy={busy}
-                  label={"↻ new thread, whole reading"}
-                />
-              </div>
-            </div>
+            <TasterChooser selected={lens} onPick={chooseTaster} busy={busy} />
 
-            <KeepsakeCard
-              signs={signs}
-              animalSymbol={a.symbol}
-              westernSymbol={w.symbol}
-              reading={reading}
-              busy={busy}
-              busyPart={busyPart}
-              copied={copied}
-              onReword={(part) => {
-                if (reading) void generate(reading.thread, part);
-              }}
-              onCopyLine={copyLine}
-            />
+            {lens && (
+              <div className="flex justify-end">
+                <RegenBtn onClick={newThread} busy={busy} label={"↻ new thread, whole reading"} />
+              </div>
+            )}
+
+            {lens ? (
+              <KeepsakeCard
+                signs={signs}
+                animalSymbol={a.symbol}
+                westernSymbol={w.symbol}
+                reading={reading}
+                busy={busy}
+                busyPart={busyPart}
+                copied={copied}
+                onReword={reword}
+                onCopyLine={copyLine}
+              />
+            ) : (
+              <div
+                className="rounded-2xl p-10 text-center"
+                style={{ background: "rgba(245,239,226,.04)", border: "1px dashed rgba(217,164,65,.35)" }}
+              >
+                <p className="text-sm" style={{ color: SOFT }}>
+                  Pick a taster above to meet yourself.
+                </p>
+              </div>
+            )}
 
             <p className="text-xs text-center" style={{ color: MIST }}>
-              Reword keeps your thread; new thread starts fresh. For fun, reflection, and the occasional mug.
+              Switch tasters any time to meet yourself a different way. Reword keeps your thread; new thread
+              starts fresh. For fun, reflection, and the occasional mug.
             </p>
           </div>
         )}

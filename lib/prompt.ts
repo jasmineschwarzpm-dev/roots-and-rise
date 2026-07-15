@@ -4,9 +4,11 @@ import {
   westernCard,
   animalCard,
   elementCard,
-  exemplarsForTone,
+  voiceExemplars,
   ANTI_EXAMPLES,
-  type Tone,
+  lensInfo,
+  LENSES,
+  type Lens,
 } from "./content";
 import type { ReadingPart } from "./reading";
 
@@ -47,12 +49,16 @@ function bannedClause(): string {
     `Punctuation you may never use: ${punctuation}.`,
     `Words you may never use: ${words}.`,
     `Never do these: ${constructions}.`,
+    // Spelled out with examples, because this is the rule models break most and
+    // the owner notices every time. Catching it here is cheaper than a rewrite.
+    'Never flip a negation into an affirmation. All of these are forbidden: "not X but Y"; "it isn\'t X, it\'s Y"; "joy is not soft, it is unstoppable"; "it does not vanish, it softens"; "is never a mistake, just your nature"; and the same flip written backwards, "a discipline, not a default" or "your whole self, not half of it". Simply state the positive thing and stop.',
   ].join(" ");
 }
 
-function buildSystem(tone: Tone): string {
+function buildSystem(lens: Lens): string {
   const pipe = vr.generation_pipeline;
-  const goods = exemplarsForTone(tone, 6)
+  const li = lensInfo(lens) ?? LENSES[0];
+  const goods = voiceExemplars(6)
     .map((e) => `- ${e.text}`)
     .join("\n");
   const bads = ANTI_EXAMPLES.slice(0, 5)
@@ -75,7 +81,9 @@ function buildSystem(tone: Tone): string {
     `Element role: ${pipe.element_role}`,
     `Kinship rule: ${pipe.kinship_rule}`,
     "",
-    "GOOD examples of the voice for this tone:",
+    `READING LENS: ${li.philosopher}, the ${li.taste} taster from the Vinegar Tasters allegory. ${li.stance} Read this person's two skies through this lens: emphasize ${li.emphasis}. ${li.relationship} Carry this voice throughout: ${li.voice}. Never name the philosopher or the philosophy in the reading; let it shape the meaning, not the vocabulary.`,
+    "",
+    "GOOD examples of the house voice (match this craft, the mood follows the lens):",
     goods,
     "",
     "NEVER write like these:",
@@ -87,7 +95,7 @@ function buildUser(
   western: string,
   animal: string,
   element: string,
-  tone: Tone,
+  lens: Lens,
   lockedThread?: string | null,
   onlyPart?: ReadingPart | null,
 ): string {
@@ -114,7 +122,8 @@ function buildUser(
     }
   }
 
-  lines.push(`TONE: ${tone}, meaning ${vr.tones[tone] ?? ""}.`);
+  const li = lensInfo(lens) ?? LENSES[0];
+  lines.push(`Hold the whole reading in the ${li.philosopher} lens: emphasize ${li.emphasis}.`);
   lines.push("");
 
   if (lockedThread && onlyPart) {
@@ -134,12 +143,12 @@ export function buildPrompt(
   western: string,
   animal: string,
   element: string,
-  tone: Tone,
+  lens: Lens,
   lockedThread?: string | null,
   onlyPart?: ReadingPart | null,
 ): { system: string; user: string } {
   return {
-    system: buildSystem(tone),
-    user: buildUser(western, animal, element, tone, lockedThread, onlyPart),
+    system: buildSystem(lens),
+    user: buildUser(western, animal, element, lens, lockedThread, onlyPart),
   };
 }

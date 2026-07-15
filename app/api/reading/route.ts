@@ -3,7 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { buildPrompt } from "@/lib/prompt";
 import { fallbackReading } from "@/lib/fallback";
 import { findViolations, scrubAll } from "@/lib/voice";
-import { WESTERN_SIGNS, ANIMALS, ELEMENTS, type Tone } from "@/lib/content";
+import { WESTERN_SIGNS, ANIMALS, ELEMENTS, LENSES, type Lens } from "@/lib/content";
 import { READING_PARTS, type Reading, type ReadingPart } from "@/lib/reading";
 
 // The Anthropic SDK uses Node APIs, so pin this route to the Node runtime.
@@ -12,8 +12,6 @@ export const runtime = "nodejs";
 // Current-generation Sonnet: strong warm creative writing at Sonnet-tier cost.
 const MODEL = "claude-sonnet-5";
 const MAX_TOKENS = 1024;
-
-const TONES: Tone[] = ["grounded", "rising", "mixed"];
 
 // Structured-output schema so the four parts always come back as clean JSON.
 const READING_SCHEMA = {
@@ -69,7 +67,7 @@ type RequestBody = {
   western?: unknown;
   animal?: unknown;
   element?: unknown;
-  tone?: unknown;
+  lens?: unknown;
   lockedThread?: unknown;
   onlyPart?: unknown;
   nonce?: unknown;
@@ -79,18 +77,18 @@ type Validated = {
   western: string;
   animal: string;
   element: string;
-  tone: Tone;
+  lens: Lens;
   lockedThread: string | null;
   onlyPart: ReadingPart | null;
   nonce: number;
 };
 
 function validate(body: RequestBody): Validated | null {
-  const { western, animal, element, tone } = body;
+  const { western, animal, element, lens } = body;
   if (typeof western !== "string" || !WESTERN_SIGNS.some((s) => s.name === western)) return null;
   if (typeof animal !== "string" || !ANIMALS.some((a) => a.name === animal)) return null;
   if (typeof element !== "string" || !ELEMENTS.some((e) => e.name === element)) return null;
-  if (typeof tone !== "string" || !TONES.includes(tone as Tone)) return null;
+  if (typeof lens !== "string" || !LENSES.some((l) => l.id === lens)) return null;
 
   const lockedThread = typeof body.lockedThread === "string" ? body.lockedThread : null;
   const onlyPart =
@@ -103,7 +101,7 @@ function validate(body: RequestBody): Validated | null {
     western,
     animal,
     element,
-    tone: tone as Tone,
+    lens: lens as Lens,
     lockedThread,
     onlyPart,
     nonce,
@@ -111,7 +109,7 @@ function validate(body: RequestBody): Validated | null {
 }
 
 function offline(v: Validated, limited = false): NextResponse {
-  const reading = fallbackReading(v.western, v.animal, v.element, v.tone, v.nonce, v.lockedThread);
+  const reading = fallbackReading(v.western, v.animal, v.element, v.lens, v.nonce, v.lockedThread);
   return NextResponse.json({ ...reading, limited });
 }
 
@@ -176,7 +174,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
   try {
     const client = new Anthropic();
-    const { system, user } = buildPrompt(v.western, v.animal, v.element, v.tone, v.lockedThread, v.onlyPart);
+    const { system, user } = buildPrompt(v.western, v.animal, v.element, v.lens, v.lockedThread, v.onlyPart);
 
     let draft = await generateOnce(client, system, user);
     if (!draft) return offline(v);
@@ -189,7 +187,11 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         `\n\nYour previous draft broke these voice rules: ${violations.join("; ")}.` +
         ` Write a fresh version that keeps the same thread ("${draft.thread}") and breaks none of the rules.`;
       const retry = await generateOnce(client, system, retryUser);
-      if (retry) draft = retry;
+      // Keep whichever draft breaks fewer rules. A worse rewrite should never
+      // replace a better first draft.
+      if (retry && findViolations(draftText(retry)).length < violations.length) {
+        draft = retry;
+      }
     }
 
     const reading: Reading = {
